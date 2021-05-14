@@ -1,0 +1,90 @@
+
+(full_reset)
+(set_unique_name_assumption t )
+(in_knowledge_base covid_KBS covid_vaccination_romania)
+
+(signature : atomic_concepts (Person Male Female Gender Child Teenager Adult Senior 
+                              Disease Diabetes Cardiovascular Obesity Fever Muscular_pain Nausea Fatigue 
+                              Vaccination_Phase Phase_1 Phase_2 Phase_3 
+                              Job Nurse Waiter Janitor Engineer
+                              County City
+                              Vaccine VaccineType SideEffect
+                              )  
+           : roles (
+              (lives :domain Person :range City :functional)
+              (has_disease :domain Person :range Disease)
+              (has_job :domain Person :range Job)
+              (vaccinate_in_phase :domain Person :range Vaccination_Phase)
+              (has_medical_job :domain Person :range Job)
+              (has_essential_job :domain Person :range Job)
+              (has_side_effect :domain Vaccine :range SideEffect)
+              (has_type :domain Vaccine :range VaccineType)
+              (part_of :domain County :range city)
+           ) 
+           : individuals()
+)
+
+; Used for ContentODP Topic
+(instance pfizer Vaccine)
+(instance az Vaccine)
+
+(instance arn_based VaccineType)
+(instance viral_vector VaccineType)
+
+(instance blood_clot SideEffect)
+
+(related pfizer arn_based has_type)
+(related az viral_vector has_type)
+
+(related az blood_clot has_side_effect)
+
+; Partition design pattern
+(disjoint Male Female)
+(disjoint Child Teenager Adult Senior)
+(disjoint Phase_1 Phase_2 Phase_3)
+(disjoint Nurse Waiter Janitor Engineer)
+(disjoint Diabetes Cardiovascular Obesity Fever Muscular_pain Nausea Fatigue)
+
+(equivalent Person (or Male Female))
+(equivalent Person (or Child Teenager Adult Senior))
+(equivalent Job (or Nurse Waiter Janitor Engineer))
+(equivalent Disease (or Diabetes Cardiovascular Obesity Fever Muscular_pain Nausea Fatigue))
+(equivalent Vaccination_Phase (or Phase_1 Phase_2 Phase_3))
+
+; Content ODP(Part of)
+(implies Phase_1 Phase_2)
+; dacă te poți vaccina în faza 2 <=> te poți vaccina și în faza 3
+(implies Phase_2 Phase_3)
+
+(define_rule (?x ?y vaccinate_in_phase)
+  (and (?x ?z has_medical_job) (?y Phase_1)))
+(run_all_rules)
+
+(define_rule (?x ?y vaccinate_in_phase)
+  (or (?x ?z has_essential_job) (?x ?w has_disease)) (?y Phase_2)))
+(run_all_rules)
+
+; Queries
+
+; Q1 : Câte tipuri de vaccin sunt disponibile?
+
+(evaluate (length (retrieve-concept-instances 
+		'Vaccine (current-abox) (all-individuals))))
+
+; Q2 : Care sunt localitățile județului Cluj?
+
+(retrieve (?x) 
+	(and (?x City)
+	(Cluj ?x part_of)))
+
+; Q3 : Care sunt reacțiile adverse posibile în urma vaccinării cu AstraZeneca?
+
+(retrieve (?x ) 
+	(and (?y SideEffect)
+	(az ?y has_side_effect)))
+
+; Q4 : Care sunt vaccinurile create pe bază de arn viral?
+
+(retrieve (?x ) 
+	(and (?x Vaccine)
+	(?x arn_based has_type)))

@@ -1,0 +1,35 @@
+(FULL-RESET)
+
+(signature :atomic-concepts (Affect Elderly Person Quality Event Disease)
+           :roles (
+              (experiencer :domain Affect :range Person)
+              (hasQuality :domain Affect :range Quality)
+              (Cause :domain Affect :range Disease)
+           )
+)
+
+(IMPLIES Affect  Event )
+(IMPLIES Elderly Person)
+
+(INSTANCE affect_1  Affect )
+(INSTANCE Only  Quality )
+(INSTANCE elderly_1  Elderly )
+(INSTANCE person_1  Person )
+(INSTANCE person_1  (not Elderly) )
+(INSTANCE Covid19 Disease)
+
+(RELATED affect_1  Covid19 Cause )
+(RELATED affect_1  Only hasQuality )
+(RELATED affect_1  elderly_1  experiencer )
+(RELATED affect_1  person_1  experiencer )
+
+(DEFINE-RULE (?z  Elderly )
+  (and (?x Only  hasQuality )
+    (?x ?y  experiencer )
+    (?x ?z  experiencer )
+    (?y  Elderly ))
+)
+(run-all-rules)
+
+(tbox-coherent?)
+(abox-consistent?)

@@ -27,6 +27,8 @@
 )
 
 (define-concrete-domain-attribute has-pop :domain County :type integer)
+(define-concrete-domain-attribute has-incidence :domain County :type integer)
+(define-concrete-domain-attribute has-age :domain Person :type integer)
 
 ;       Sparql query to get counties       
 ;

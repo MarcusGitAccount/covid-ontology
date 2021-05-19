@@ -2,17 +2,20 @@
 (set-unique-name-assumption t)
 (in-knowledge-base covid-KBS covid-vaccination-romania)
 
-(signature :atomic-concepts (Person Male Female Gender Child Teenager Adult Senior 
+(signature :atomic-concepts (Person Male Female Gender Age-Group Child Teenager Adult Senior 
                               Disease Diabetes Cardiovascular Obesity Fever Muscular-pain Nausea Fatigue 
                               Vaccination-Phase Phase-1 Phase-2 Phase-3 
                               Job Nurse Waiter Janitor Engineer
                               County City
-                              Vaccine VaccineType SideEffect)
+                              Vaccine VaccineType SideEffect
+                              Red Yellow Green)
            :roles (
               (lives :domain Person :range City :functional)
               (has-disease :domain Person :range Disease)
               (has-job :domain Person :range Job)
               (vaccinate-in-phase :domain Person :range Vaccination-Phase)
+              (in-age-group :domain Person :range Age-Group)
+              (vaccinate-with :domain Age-Group :range VaccineType)
               (has-medical-job :domain Person :range Job)
               (has-essential-job :domain Person :range Job)
               (has-side-effect :domain Vaccine :range SideEffect)
@@ -119,6 +122,8 @@
 (disjoint Nurse Waiter Janitor Engineer)
 (disjoint Diabetes Cardiovascular Obesity Fever Muscular-pain Nausea Fatigue)
 
+(equivalent Age-Group (or Child Teenager Adult Senior))
+
 (equivalent Person (or Male Female))
 (equivalent Person (or Child Teenager Adult Senior))
 (equivalent Job (or Nurse Waiter Janitor Engineer))
@@ -130,15 +135,26 @@
 ; dacă te poți vaccina în faza 2 <=> te poți vaccina și în faza 3
 (implies Phase-2 Phase-3)
 
-(define-rule (?x ?y vaccinate-in-phase)
-  (and (?x ?z has-medical-job) (?y Phase-1)))
-(run-all-rules)
-
-(define-rule (?x ?y vaccinate-in-phase)
-  (or (?x ?z has-essential-job) (?x ?w has-disease)) (?y Phase-2))
-(run-all-rules)
 
 ; Queries
+(define-rule (?x ?y vaccinate-in-phase)
+  (or (and (?x ?z has-medical-job) (?y Phase-1))
+      ((or (?x ?z has-essential-job) (?x ?w has-disease)) (?y Phase-2))
+      (?y Phase-3)))
+
+(define-rule (?x ?y vaccinate-with)
+  (or ((?x Child) (?y arn-based))
+      ((?x Teenager) (?y arn-based))
+      ((?x Adult) (?y viral-vector))
+      ((?x Senior) (?y arn-based))))
+
+(define-rule (?x ?y in-age-group) 
+  (or (and (min ?x has-age 0) ( max ?x has-age 13) (?y Child))
+      (and (min ?x has-age 14) ( max ?x has-age 25) (?y Teenager))
+      (and (min ?x has-age 26) ( max ?x has-age 64) (?y Adult))
+      (and (min ?x has-age 65) (?y Senior))))
+
+(run-all-rules)
 
 ; Q1 : Câte tipuri de vaccin sunt disponibile?
 

@@ -8,7 +8,8 @@
                               Job Nurse Waiter Janitor Engineer
                               County City
                               Vaccine VaccineType SideEffect
-                              Red Yellow Green Restriction-Type)
+                              Red Yellow Green Scenario
+                              Lockdown Hour-Restriction No-Restriction Restriction-Type)
            :roles (
               (lives :domain Person :range City :functional)
               (has-disease :domain Person :range Disease)
@@ -21,7 +22,8 @@
               (has-side-effect :domain Vaccine :range SideEffect)
               (has-type :domain Vaccine :range VaccineType)
               (part-of :domain County :range city) 
-              (has-restriction :domanin County :range Restriction-Type)
+              (in-scenario :domanin County :range Scenario) 
+              (has-restriction :domanin Scenario :Restriction-Type)
            )
            :individuals()
 )
@@ -126,7 +128,8 @@
 (disjoint Diabetes Cardiovascular Obesity Fever Muscular-pain Nausea Fatigue)
 
 (equivalent Age-Group (or Child Teenager Adult Senior))
-(equivalent Restriction-Type (or Red Yellow Green))
+(equivalent Scenario (or Red Yellow Green))
+(equivalent Restriction-Type (or Lockdown Hour-Restriction No-Restriction))
 
 (equivalent Person (or Male Female))
 (equivalent Person (or Child Teenager Adult Senior))
@@ -143,14 +146,14 @@
 ; Queries
 (define-rule (?x ?y vaccinate-in-phase)
   (or (and (?x ?z has-medical-job) (?y Phase-1))
-      ((or (?x ?z has-essential-job) (?x ?w has-disease)) (?y Phase-2))
+      (and (or (?x ?z has-essential-job) (?x ?w has-disease)) (?y Phase-2))
       (?y Phase-3)))
 
 (define-rule (?x ?y vaccinate-with)
-  (or ((?x Child) (?y arn-based))
-      ((?x Teenager) (?y arn-based))
-      ((?x Adult) (?y viral-vector))
-      ((?x Senior) (?y arn-based))))
+  (or (and (?x Child) (?y arn-based))
+      (and (?x Teenager) (?y arn-based))
+      (and (?x Adult) (?y viral-vector))
+      (and (?x Senior) (?y arn-based))))
 
 (define-rule (?x ?y in-age-group) 
   (or (and (min ?x has-age 0) ( max ?x has-age 13) (?y Child))
@@ -158,10 +161,15 @@
       (and (min ?x has-age 26) ( max ?x has-age 64) (?y Adult))
       (and (min ?x has-age 65) (?y Senior))))
 
-(define-rule (?x ?y has-restriction) 
+(define-rule (?x ?y in-scenario) 
   (or (and (min ?x has-incidence 0) ( max ?x has-incidence 3) (?y Green))
       (and (min ?x has-incidence 4) ( max ?x has-incidence 6) (?y Yellow))
       (and (min ?x has-incidence 7) (?y Red))))
+
+(define-rule (?x ?y has-restriction)
+  (or (and (?x Red) (?y Lockdown))
+      (and (?x Yellow) (?y Hour-Restriction))
+      (and (?x Green) (?y No-Restriction))))
 
 (run-all-rules)
 

@@ -1,68 +1,142 @@
+(full-reset)
+(set-unique-name-assumption t)
+(in-knowledge-base covid-KBS covid-vaccination-romania)
 
-(full_reset)
-(set_unique_name_assumption t )
-(in_knowledge_base covid_KBS covid_vaccination_romania)
-
-(signature : atomic_concepts (Person Male Female Gender Child Teenager Adult Senior 
-                              Disease Diabetes Cardiovascular Obesity Fever Muscular_pain Nausea Fatigue 
-                              Vaccination_Phase Phase_1 Phase_2 Phase_3 
+(signature :atomic-concepts (Person Male Female Gender Child Teenager Adult Senior 
+                              Disease Diabetes Cardiovascular Obesity Fever Muscular-pain Nausea Fatigue 
+                              Vaccination-Phase Phase-1 Phase-2 Phase-3 
                               Job Nurse Waiter Janitor Engineer
                               County City
-                              Vaccine VaccineType SideEffect
-                              )  
-           : roles (
+                              Vaccine VaccineType SideEffect)
+           :roles (
               (lives :domain Person :range City :functional)
-              (has_disease :domain Person :range Disease)
-              (has_job :domain Person :range Job)
-              (vaccinate_in_phase :domain Person :range Vaccination_Phase)
-              (has_medical_job :domain Person :range Job)
-              (has_essential_job :domain Person :range Job)
-              (has_side_effect :domain Vaccine :range SideEffect)
-              (has_type :domain Vaccine :range VaccineType)
-              (part_of :domain County :range city)
-           ) 
-           : individuals()
+              (has-disease :domain Person :range Disease)
+              (has-job :domain Person :range Job)
+              (vaccinate-in-phase :domain Person :range Vaccination-Phase)
+              (has-medical-job :domain Person :range Job)
+              (has-essential-job :domain Person :range Job)
+              (has-side-effect :domain Vaccine :range SideEffect)
+              (has-type :domain Vaccine :range VaccineType)
+              (part-of :domain County :range city)
+           )
+           :individuals()
 )
+
+(define-concrete-domain-attribute has-pop :domain County :type integer)
+
+;       Sparql query to get counties       
+;
+;       PREFIX category: <http://dbpedia.org/resource/Category:>
+;       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+;       
+;       select distinct ?county where {
+;         ?county dbo:type ?type
+;         FILTER(?type = dbr:Counties_of_Romania)
+;       }
+
+; Counties and administrative stuff from dbpedia
+
+(instance County Vaslui_County)
+(instance County Cluj_County)
+(instance County Olt_County)
+(instance County Maramures_County)
+(instance County Harghita_County)
+(instance County Hunedoara_County)
+(instance County Ialomita_County)
+(instance County Iasi_County)
+(instance County Ilfov_County)
+(instance County Satu_Mare_County)
+(instance County Tulcea_County)
+(instance County Constanta_County)
+(instance County Covasna_County)
+(instance County Calarasi_County)
+(instance County Sibiu_County)
+(instance County Salaj_County)
+(instance County Vrancea_County)
+(instance County Valcea_County)
+(instance County Neamt_County)
+(instance County Prahova_County)
+(instance County Suceava_County)
+(instance County Mures_County)
+(instance County Mehedinti_County)
+(instance County Teleorman_County)
+
+;       Sparql query to get counties population
+
+
+;       PREFIX category: <http://dbpedia.org/resource/Category:>
+;       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+;       PREFIX page: <https://dbpedia.org/page/>
+;       
+;       select distinct(?county) ?population where {
+;         ?county dbo:type ?type.
+;         ?county  dbo:populationTotal ?population.
+;         FILTER(?type = dbr:Counties_of_Romania)
+;       }
+
+(attribute-filler Vaslui_County	395500 has-pop)
+(attribute-filler Cluj_County	691106 has-pop)
+(attribute-filler Olt_County	415530 has-pop)
+(attribute-filler Maramures_County	516562 has-pop)
+(attribute-filler Harghita_County	304969 has-pop)
+(attribute-filler Hunedoara_County	396253 has-pop)
+(attribute-filler Ialomita_County	293352 has-pop)
+(attribute-filler Iasi_County	772348 has-pop)
+(attribute-filler Ilfov_County	999562 has-pop)
+(attribute-filler Satu_Mare_County	329079 has-pop)
+(attribute-filler Tulcea_County	201462 has-pop)
+(attribute-filler Constanta_County	684082 has-pop)
+(attribute-filler Covasna_County	210177 has-pop)
+(attribute-filler Calarasi_County	285050 has-pop)
+(attribute-filler Salaj_County	343347 has-pop)
+(attribute-filler Vrancea_County	340310 has-pop)
+(attribute-filler Valcea_County	355320 has-pop)
+(attribute-filler Neamt_County	470766 has-pop)
+(attribute-filler Prahova_County	762886 has-pop)
+(attribute-filler Suceava_County	634810 has-pop)
+(attribute-filler Mures_County	550846 has-pop)
+(attribute-filler Mehedinti_County	303878 has-pop)
+(attribute-filler Teleorman_County	360178 has-pop)
 
 ; Used for ContentODP Topic
 (instance pfizer Vaccine)
 (instance az Vaccine)
 
-(instance arn_based VaccineType)
-(instance viral_vector VaccineType)
+(instance arn-based VaccineType)
+(instance viral-vector VaccineType)
 
-(instance blood_clot SideEffect)
+(instance blood-clot SideEffect)
 
-(related pfizer arn_based has_type)
-(related az viral_vector has_type)
+(related pfizer arn-based has-type)
+(related az viral-vector has-type)
 
-(related az blood_clot has_side_effect)
+(related az blood-clot has-side-effect)
 
 ; Partition design pattern
 (disjoint Male Female)
 (disjoint Child Teenager Adult Senior)
-(disjoint Phase_1 Phase_2 Phase_3)
+(disjoint Phase-1 Phase-2 Phase-3)
 (disjoint Nurse Waiter Janitor Engineer)
-(disjoint Diabetes Cardiovascular Obesity Fever Muscular_pain Nausea Fatigue)
+(disjoint Diabetes Cardiovascular Obesity Fever Muscular-pain Nausea Fatigue)
 
 (equivalent Person (or Male Female))
 (equivalent Person (or Child Teenager Adult Senior))
 (equivalent Job (or Nurse Waiter Janitor Engineer))
-(equivalent Disease (or Diabetes Cardiovascular Obesity Fever Muscular_pain Nausea Fatigue))
-(equivalent Vaccination_Phase (or Phase_1 Phase_2 Phase_3))
+(equivalent Disease (or Diabetes Cardiovascular Obesity Fever Muscular-pain Nausea Fatigue))
+(equivalent Vaccination-Phase (or Phase-1 Phase-2 Phase-3))
 
 ; Content ODP(Part of)
-(implies Phase_1 Phase_2)
+(implies Phase-1 Phase-2)
 ; dacă te poți vaccina în faza 2 <=> te poți vaccina și în faza 3
-(implies Phase_2 Phase_3)
+(implies Phase-2 Phase-3)
 
-(define_rule (?x ?y vaccinate_in_phase)
-  (and (?x ?z has_medical_job) (?y Phase_1)))
-(run_all_rules)
+(define-rule (?x ?y vaccinate-in-phase)
+  (and (?x ?z has-medical-job) (?y Phase-1)))
+(run-all-rules)
 
-(define_rule (?x ?y vaccinate_in_phase)
-  (or (?x ?z has_essential_job) (?x ?w has_disease)) (?y Phase_2)))
-(run_all_rules)
+(define-rule (?x ?y vaccinate-in-phase)
+  (or (?x ?z has-essential-job) (?x ?w has-disease)) (?y Phase-2))
+(run-all-rules)
 
 ; Queries
 
@@ -73,18 +147,18 @@
 
 ; Q2 : Care sunt localitățile județului Cluj?
 
-(retrieve (?x) 
+(retrieve (?x)
 	(and (?x City)
-	(Cluj ?x part_of)))
+	(Cluj ?x part-of)))
 
 ; Q3 : Care sunt reacțiile adverse posibile în urma vaccinării cu AstraZeneca?
 
 (retrieve (?x ) 
 	(and (?y SideEffect)
-	(az ?y has_side_effect)))
+	(az ?y has-side-effect)))
 
 ; Q4 : Care sunt vaccinurile create pe bază de arn viral?
 
-(retrieve (?x ) 
+(retrieve (?x )
 	(and (?x Vaccine)
-	(?x arn_based has_type)))
+	(?x arn-based has-type)))

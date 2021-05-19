@@ -8,7 +8,7 @@
                               Job Nurse Waiter Janitor Engineer
                               County City
                               Vaccine VaccineType SideEffect
-                              Red Yellow Green)
+                              Red Yellow Green Restriction-Type)
            :roles (
               (lives :domain Person :range City :functional)
               (has-disease :domain Person :range Disease)
@@ -20,7 +20,8 @@
               (has-essential-job :domain Person :range Job)
               (has-side-effect :domain Vaccine :range SideEffect)
               (has-type :domain Vaccine :range VaccineType)
-              (part-of :domain County :range city)
+              (part-of :domain County :range city) 
+              (has-restriction :domanin County :range Restriction-Type)
            )
            :individuals()
 )
@@ -123,6 +124,7 @@
 (disjoint Diabetes Cardiovascular Obesity Fever Muscular-pain Nausea Fatigue)
 
 (equivalent Age-Group (or Child Teenager Adult Senior))
+(equivalent Restriction-Type (or Red Yellow Green))
 
 (equivalent Person (or Male Female))
 (equivalent Person (or Child Teenager Adult Senior))
@@ -153,6 +155,11 @@
       (and (min ?x has-age 14) ( max ?x has-age 25) (?y Teenager))
       (and (min ?x has-age 26) ( max ?x has-age 64) (?y Adult))
       (and (min ?x has-age 65) (?y Senior))))
+
+(define-rule (?x ?y has-restriction) 
+  (or (and (min ?x has-incidence 0) ( max ?x has-incidence 3) (?y Green))
+      (and (min ?x has-incidence 4) ( max ?x has-incidence 6) (?y Yellow))
+      (and (min ?x has-incidence 7) (?y Red))))
 
 (run-all-rules)
 

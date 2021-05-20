@@ -44,7 +44,7 @@ if __name__ == '__main__':
     for county in counties_cases.keys():
       if county in lut:
         cases = f'(attribute-filler {lut[county]}	{counties_cases[county]} has-cases)\n'
-        incidence = f'(attribute-filler {lut[county]}	{int(100 * counties_incidence[county])} has-incidence)\n'
+        incidence = f'(attribute-filler {lut[county]}	{counties_incidence[county]} has-incidence)\n'
 
         rules_cases.append(cases)
         rules_incidence.append(incidence)

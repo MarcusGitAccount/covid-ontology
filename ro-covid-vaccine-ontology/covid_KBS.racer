@@ -1,74 +1,69 @@
 (full-reset)
 (set-unique-name-assumption t)
-(in-knowledge-base covid-KBS covid-vaccination-romania)
+(in-knowledge-base covid-KBS)
+(in-tbox covid-KBS :init t)
 
 (signature :atomic-concepts (Person Male Female Gender Age-Group Child Teenager Adult Senior 
                               Disease Diabetes Cardiovascular Obesity Fever Muscular-pain Nausea Fatigue 
                               Vaccination-Phase Phase-1 Phase-2 Phase-3 
-                              Job Nurse Waiter Janitor Engineer
+                              Job Nurse Waiter Janitor Engineer Doctor Military
                               County City
                               Vaccine VaccineType SideEffect
                               Red Yellow Green Scenario
-                              Lockdown Hour-Restriction No-Restriction Restriction-Type)
+                              Lockdown Hour-Restriction No-Restriction Restriction-Type
+                              Medical-Job Essential-Job)
            :roles (
-              (lives :domain Person :range City :functional)
+              (lives :domain Person :range City)
               (has-disease :domain Person :range Disease)
               (has-job :domain Person :range Job)
               (vaccinate-in-phase :domain Person :range Vaccination-Phase)
               (in-age-group :domain Person :range Age-Group)
-              (vaccinate-with :domain Age-Group :range VaccineType)
-              (has-medical-job :domain Person :range Job)
-              (has-essential-job :domain Person :range Job)
+              (vaccinate-with :domain Person :range VaccineType)
               (has-side-effect :domain Vaccine :range SideEffect)
               (has-type :domain Vaccine :range VaccineType)
               (part-of :domain County :range city) 
-              (in-scenario :domanin County :range Scenario) 
-              (has-restriction :domanin Scenario :Restriction-Type)
+              (in-scenario :domain County :range Scenario) 
+              (has-restriction :domain Scenario :range Restriction-Type)
            )
-           :individuals()
+           :attributes(
+               (integer has-pop)
+               (real has-incidence)
+               (real has-vaccinated)
+               (integer has-cases)
+               (integer has-age)
+            )
 )
 
-(define-concrete-domain-attribute has-pop :domain County :type integer)
-(define-concrete-domain-attribute has-incidence :domain County :type integer)
-(define-concrete-domain-attribute has-cases :domain County :type integer)
-(define-concrete-domain-attribute has-age :domain Person :type integer)
+; (define-concrete-domain-attribute has-pop :domain County :type integer)
+; (define-concrete-domain-attribute has-incidence :domain County :type integer)
+; (define-concrete-domain-attribute has-cases :domain County :type integer)
+; (define-concrete-domain-attribute has-age :domain Person :type integer)
 
-;       Sparql query to get counties       
-;
-;       PREFIX category: <http://dbpedia.org/resource/Category:>
-;       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-;       
-;       select distinct ?county where {
-;         ?county dbo:type ?type
-;         FILTER(?type = dbr:Counties_of_Romania)
-;       }
 
-; Counties and administrative stuff from dbpedia
-
-(instance County Vaslui_County)
-(instance County Cluj_County)
-(instance County Olt_County)
-(instance County Maramures_County)
-(instance County Harghita_County)
-(instance County Hunedoara_County)
-(instance County Ialomita_County)
-(instance County Iasi_County)
-(instance County Ilfov_County)
-(instance County Satu_Mare_County)
-(instance County Tulcea_County)
-(instance County Constanta_County)
-(instance County Covasna_County)
-(instance County Calarasi_County)
-(instance County Sibiu_County)
-(instance County Salaj_County)
-(instance County Vrancea_County)
-(instance County Valcea_County)
-(instance County Neamt_County)
-(instance County Prahova_County)
-(instance County Suceava_County)
-(instance County Mures_County)
-(instance County Mehedinti_County)
-(instance County Teleorman_County)
+(instance  Vaslui_County County)
+(instance  Cluj_County County)
+(instance  Olt_County County)
+(instance  Maramures_County County)
+(instance  Harghita_County County)
+(instance  Hunedoara_County County)
+(instance  Ialomita_County County)
+(instance  Iasi_County County)
+(instance  Ilfov_County County)
+(instance  Satu_Mare_County County)
+(instance  Tulcea_County County)
+(instance  Constanta_County County)
+(instance  Covasna_County County)
+(instance  Calarasi_County County)
+(instance  Sibiu_County County)
+(instance  Salaj_County County)
+(instance  Vrancea_County County)
+(instance  Valcea_County County)
+(instance  Neamt_County County)
+(instance  Prahova_County County)
+(instance  Suceava_County County)
+(instance  Mures_County County)
+(instance  Mehedinti_County County)
+(instance  Teleorman_County County)
 
 ;       Sparql query to get counties population
 
@@ -107,30 +102,30 @@
 (attribute-filler Mehedinti_County	303878 has-pop)
 (attribute-filler Teleorman_County	360178 has-pop)
 
-(attribute-filler Calarasi_County	9994 has-cases)
-(attribute-filler Cluj_County	57204 has-cases)
-(attribute-filler Constanta_County	42729 has-cases)
-(attribute-filler Covasna_County	8477 has-cases)
-(attribute-filler Harghita_County	8209 has-cases)
-(attribute-filler Hunedoara_County	22792 has-cases)
-(attribute-filler Ialomita_County	10711 has-cases)
-(attribute-filler Iasi_County	42170 has-cases)
-(attribute-filler Ilfov_County	44897 has-cases)
-(attribute-filler Maramures_County	20300 has-cases)
-(attribute-filler Mehedinti_County	8278 has-cases)
-(attribute-filler Mures_County	23795 has-cases)
-(attribute-filler Neamt_County	18758 has-cases)
-(attribute-filler Olt_County	14496 has-cases)
-(attribute-filler Prahova_County	34916 has-cases)
-(attribute-filler Satu_Mare_County	12931 has-cases)
-(attribute-filler Salaj_County	10886 has-cases)
-(attribute-filler Sibiu_County	26292 has-cases)
-(attribute-filler Suceava_County	24091 has-cases)
-(attribute-filler Teleorman_County	13625 has-cases)
-(attribute-filler Tulcea_County	8364 has-cases)
-(attribute-filler Vaslui_County	15891 has-cases)
-(attribute-filler Valcea_County	16308 has-cases)
-(attribute-filler Vrancea_County	10620 has-cases)
+(attribute-filler Calarasi_County	1 has-cases)
+(attribute-filler Cluj_County	27 has-cases)
+(attribute-filler Constanta_County	23 has-cases)
+(attribute-filler Covasna_County	9 has-cases)
+(attribute-filler Harghita_County	6 has-cases)
+(attribute-filler Hunedoara_County	14 has-cases)
+(attribute-filler Ialomita_County	7 has-cases)
+(attribute-filler Iasi_County	15 has-cases)
+(attribute-filler Ilfov_County	26 has-cases)
+(attribute-filler Maramures_County	11 has-cases)
+(attribute-filler Mehedinti_County	8 has-cases)
+(attribute-filler Mures_County	24 has-cases)
+(attribute-filler Neamt_County	21 has-cases)
+(attribute-filler Olt_County	12 has-cases)
+(attribute-filler Prahova_County	43 has-cases)
+(attribute-filler Satu_Mare_County	4 has-cases)
+(attribute-filler Salaj_County	3 has-cases)
+(attribute-filler Sibiu_County	21 has-cases)
+(attribute-filler Suceava_County	11 has-cases)
+(attribute-filler Teleorman_County	12 has-cases)
+(attribute-filler Tulcea_County	15 has-cases)
+(attribute-filler Vaslui_County	7 has-cases)
+(attribute-filler Valcea_County	15 has-cases)
+(attribute-filler Vrancea_County	13 has-cases)
 
 (attribute-filler Calarasi_County	0.41 has-incidence)
 (attribute-filler Cluj_County	1.14 has-incidence)
@@ -157,21 +152,41 @@
 (attribute-filler Valcea_County	0.52 has-incidence)
 (attribute-filler Vrancea_County	0.48 has-incidence)
 
-; Used for ContentODP Topic
-(instance pfizer Vaccine)
-(instance az Vaccine)
+(attribute-filler Calarasi_County	28.0 has-vaccinated)
+(attribute-filler Cluj_County	21.4 has-vaccinated)
+(attribute-filler Constanta_County	11.8 has-vaccinated)
+(attribute-filler Covasna_County	13.3 has-vaccinated)
+(attribute-filler Harghita_County	14.6 has-vaccinated)
+(attribute-filler Hunedoara_County	17.3 has-vaccinated)
+(attribute-filler Ialomita_County	14.3 has-vaccinated)
+(attribute-filler Iasi_County	16.8 has-vaccinated)
+(attribute-filler Ilfov_County	18.7 has-vaccinated)
+(attribute-filler Maramures_County	16.6 has-vaccinated)
+(attribute-filler Mehedinti_County	12.4 has-vaccinated)
+(attribute-filler Mures_County	17.7 has-vaccinated)
+(attribute-filler Neamt_County	11.0 has-vaccinated)
+(attribute-filler Olt_County	13.2 has-vaccinated)
+(attribute-filler Prahova_County	17.6 has-vaccinated)
+(attribute-filler Satu_Mare_County	17.0 has-vaccinated)
+(attribute-filler Salaj_County	21.8 has-vaccinated)
+(attribute-filler Sibiu_County	10.0 has-vaccinated)
+(attribute-filler Suceava_County	17.6 has-vaccinated)
+(attribute-filler Teleorman_County	12.9 has-vaccinated)
+(attribute-filler Tulcea_County	15.5 has-vaccinated)
+(attribute-filler Vaslui_County	11.8 has-vaccinated)
+(attribute-filler Valcea_County	12.2 has-vaccinated)
+(attribute-filler Vrancea_County	16.4 has-vaccinated)
 
-(instance Marcus Male)
-(instance Rares Male)
-(instance Dennis Male)
-(instance Bogdan Male)
-(instance Alina Female)
-(instance Ioana Female)
-(instance Ana Female)
-(instance Maria Female)
-(instance Dragos Male)
-(instance Stefana Female)
-
+(instance Marcus (and Male))
+(instance Rares (and Male))
+(instance Dennis (and Male))
+(instance Bogdan (and Male))
+(instance Alina (and Female))
+(instance Ioana (and Female))
+(instance Ana (and Female))
+(instance Maria (and Female))
+(instance Dragos (and Male))
+(instance Stefana (and Female))
 
 (related Marcus Engineer has-job)
 (related Rares Nurse has-job)
@@ -184,7 +199,6 @@
 (related Dragos Nurse has-job)
 (related Stefana Nurse has-job)
 
-
 (attribute-filler Marcus 15 has-age)
 (attribute-filler Rares 15 has-age)
 (attribute-filler Dennis 15 has-age)
@@ -196,16 +210,9 @@
 (attribute-filler Dragos 15 has-age)
 (attribute-filler Stefana 15 has-age)
 
-
-(instance arn-based VaccineType)
-(instance viral-vector VaccineType)
-
-(instance blood-clot SideEffect)
-
-(related pfizer arn-based has-type)
-(related az viral-vector has-type)
-
-(related az blood-clot has-side-effect)
+(equivalent Medical-Job (or Nurse Doctor))
+(equivalent Essential-Job (or Janitor Military))
+; (equivalent Age-Group (or Child Teenager Adult Senior))
 
 ; Partition design pattern
 (disjoint Male Female)
@@ -214,7 +221,6 @@
 (disjoint Nurse Waiter Janitor Engineer)
 (disjoint Diabetes Cardiovascular Obesity Fever Muscular-pain Nausea Fatigue)
 
-(equivalent Age-Group (or Child Teenager Adult Senior))
 (equivalent Scenario (or Red Yellow Green))
 (equivalent Restriction-Type (or Lockdown Hour-Restriction No-Restriction))
 
@@ -224,39 +230,55 @@
 (equivalent Disease (or Diabetes Cardiovascular Obesity Fever Muscular-pain Nausea Fatigue))
 (equivalent Vaccination-Phase (or Phase-1 Phase-2 Phase-3))
 
+(equivalent Child (and Person (max has-age 12)))
+(equivalent Teenager (and Person (max has-age 13) (max has-age 19)))
+(equivalent Adult (and Person (max has-age 20) (max has-age 64)))
+(equivalent Senior (and Person (min has-age 65)))
+
+(instance arn-based VaccineType)	
+(instance viral-vector VaccineType)	
+(instance blood-clot SideEffect)	
+(related pfizer arn-based has-type)	
+(related az viral-vector has-type)	
+(related az blood-clot has-side-effect)
+
 ; Content ODP(Part of)
 (implies Phase-1 Phase-2)
 ; dacă te poți vaccina în faza 2 <=> te poți vaccina și în faza 3
 (implies Phase-2 Phase-3)
 
 
-; Queries
-(define-rule (?x ?y vaccinate-in-phase)
-  (or (and (?x ?z has-medical-job) (?y Phase-1))
-      (and (or (?x ?z has-essential-job) (?x ?w has-disease)) (?y Phase-2))
-      (?y Phase-3)))
+; QUESTION: FAILED
+; (define-rule (?x ?y vaccinate-in-phase)
+;   (or (and (?x ?z has-job) (?z Medical-Job) (?y Phase-1))
+;       (and (or (and (?x ?z has-job) (?z Essential-Job)) (?x ?w has-disease)) (?y Phase-2))
+;       (?y Phase-3)))
+; 
 
-(define-rule (?x ?y vaccinate-with)
-  (or (and (?x Child) (?y arn-based))
-      (and (?x Teenager) (?y arn-based))
-      (and (?x Adult) (?y viral-vector))
-      (and (?x Senior) (?y arn-based))))
+; QUESTION: Cum folosim atribute în reguli?
+; (define-rule (?x ?y in-age-group) 
+;   (or (and (min ?x has-age 0) ( max ?x has-age 13) (?y Child))
+;       (and (min ?x has-age 14) ( max ?x has-age 25) (?y Teenager))
+;       (and (min ?x has-age 26) ( max ?x has-age 64) (?y Adult))
+;       (and (min ?x has-age 65) (?y Senior))))
 
-(define-rule (?x ?y in-age-group) 
-  (or (and (min ?x has-age 0) ( max ?x has-age 13) (?y Child))
-      (and (min ?x has-age 14) ( max ?x has-age 25) (?y Teenager))
-      (and (min ?x has-age 26) ( max ?x has-age 64) (?y Adult))
-      (and (min ?x has-age 65) (?y Senior))))
+; QUESTION: FAILED
+; (define-rule (?x ?y vaccinate-with)
+;   (or (and (?x Child) (?y arn-based))
+;       (and (?x Teenager) (?y arn-based))
+;       (and (?x Adult) (?y viral-vector))
+;       (and (?x Senior) (?y arn-based))))
 
-(define-rule (?x ?y in-scenario) 
-  (or (and (min ?x has-incidence 0) ( max ?x has-incidence 3) (?y Green))
-      (and (min ?x has-incidence 4) ( max ?x has-incidence 6) (?y Yellow))
-      (and (min ?x has-incidence 7) (?y Red))))
+; (define-rule (?x ?y in-scenario) 
+;   (or (and (min ?x has-incidence 0) ( max ?x has-incidence 3) (?y Green))
+;       (and (min ?x has-incidence 4) ( max ?x has-incidence 6) (?y Yellow))
+;       (and (min ?x has-incidence 7) (?y Red))))
 
-(define-rule (?x ?y has-restriction)
-  (or (and (?x Red) (?y Lockdown))
-      (and (?x Yellow) (?y Hour-Restriction))
-      (and (?x Green) (?y No-Restriction))))
+; QUESTION: FAILED
+; (define-rule (?x ?y has-restriction)
+;   (or (and (?x Red) (?y Lockdown))
+;       (and (?x Yellow) (?y Hour-Restriction))
+;       (and (?x Green) (?y No-Restriction))))
 
 (run-all-rules)
 
@@ -265,17 +287,18 @@
 (evaluate (length (retrieve-concept-instances 
 		'Vaccine (current-abox) (all-individuals))))
 
-; Q2 : Care sunt localitățile județului Cluj?
+; Q2 : Care sunt judetele cu incidență mai mare de 0.5?
 
-(retrieve (?x)
-	(and (?x City)
-	(Cluj ?x part-of)))
+(concept-instances (and County (>= has-incidence 0.5)))
+
+(retrieve (?x (has-incidence ?x) (told-value (has-incidence ?x)))
+  (?x (and County (an has-incidence) ( > has-incidence 0.5))))
 
 ; Q3 : Care sunt reacțiile adverse posibile în urma vaccinării cu AstraZeneca?
 
-(retrieve (?x ) 
-	(and (?y SideEffect)
-	(az ?y has-side-effect)))
+(retrieve (?x) 
+	(and (?x SideEffect)
+	     (az ?x has-side-effect)))
 
 ; Q4 : Care sunt vaccinurile create pe bază de arn viral?
 
@@ -283,4 +306,9 @@
 	(and (?x Vaccine)
 	(?x arn-based has-type)))
 
-  (concept-instances Person)
+(concept-instances Person)
+(concept-instances Male)
+(concept-instances Female)
+(concept-instances County)
+; QUESTION: De ce nu avem nicio instanță de Teenager când toate instanțele de persoane au 15 ani?
+(concept-instances Teenager)

@@ -1,27 +1,26 @@
-(attribute-filler Calarasi_County	9994 has-cases)
-(attribute-filler Cluj_County	57204 has-cases)
-(attribute-filler Constanta_County	42729 has-cases)
-(attribute-filler Covasna_County	8477 has-cases)
-(attribute-filler Harghita_County	8209 has-cases)
-(attribute-filler Hunedoara_County	22792 has-cases)
-(attribute-filler Ialomita_County	10711 has-cases)
-(attribute-filler Iasi_County	42170 has-cases)
-(attribute-filler Ilfov_County	44897 has-cases)
-(attribute-filler Maramures_County	20300 has-cases)
-(attribute-filler Mehedinti_County	8278 has-cases)
-(attribute-filler Mures_County	23795 has-cases)
-(attribute-filler Neamt_County	18758 has-cases)
-(attribute-filler Olt_County	14496 has-cases)
-(attribute-filler Prahova_County	34916 has-cases)
-(attribute-filler Satu_Mare_County	12931 has-cases)
-(attribute-filler Salaj_County	10886 has-cases)
-(attribute-filler Sibiu_County	26292 has-cases)
-(attribute-filler Suceava_County	24091 has-cases)
-(attribute-filler Teleorman_County	13625 has-cases)
-(attribute-filler Tulcea_County	8364 has-cases)
-(attribute-filler Vaslui_County	15891 has-cases)
-(attribute-filler Valcea_County	16308 has-cases)
-(attribute-filler Vrancea_County	10620 has-cases)
+(attribute-filler Calarasi_County	1 has-cases)
+(attribute-filler Cluj_County	27 has-cases)
+(attribute-filler Constanta_County	23 has-cases)
+(attribute-filler Covasna_County	9 has-cases)
+(attribute-filler Harghita_County	6 has-cases)
+(attribute-filler Hunedoara_County	14 has-cases)
+(attribute-filler Ialomita_County	7 has-cases)
+(attribute-filler Iasi_County	15 has-cases)
+(attribute-filler Ilfov_County	26 has-cases)
+(attribute-filler Maramures_County	11 has-cases)
+(attribute-filler Mehedinti_County	8 has-cases)
+(attribute-filler Mures_County	24 has-cases)
+(attribute-filler Neamt_County	21 has-cases)
+(attribute-filler Olt_County	12 has-cases)
+(attribute-filler Prahova_County	43 has-cases)
+(attribute-filler Satu_Mare_County	4 has-cases)
+(attribute-filler Salaj_County	3 has-cases)
+(attribute-filler Suceava_County	11 has-cases)
+(attribute-filler Teleorman_County	12 has-cases)
+(attribute-filler Tulcea_County	15 has-cases)
+(attribute-filler Vaslui_County	7 has-cases)
+(attribute-filler Valcea_County	15 has-cases)
+(attribute-filler Vrancea_County	13 has-cases)
 
 (attribute-filler Calarasi_County	0.41 has-incidence)
 (attribute-filler Cluj_County	1.14 has-incidence)
@@ -40,10 +39,150 @@
 (attribute-filler Prahova_County	1.03 has-incidence)
 (attribute-filler Satu_Mare_County	0.28 has-incidence)
 (attribute-filler Salaj_County	0.68 has-incidence)
-(attribute-filler Sibiu_County	0.9 has-incidence)
 (attribute-filler Suceava_County	0.26 has-incidence)
 (attribute-filler Teleorman_County	0.59 has-incidence)
 (attribute-filler Tulcea_County	0.54 has-incidence)
 (attribute-filler Vaslui_County	0.26 has-incidence)
 (attribute-filler Valcea_County	0.52 has-incidence)
 (attribute-filler Vrancea_County	0.48 has-incidence)
+
+(attribute-filler Calarasi_County	28.0 has-vaccinated)
+(attribute-filler Cluj_County	21.4 has-vaccinated)
+(attribute-filler Constanta_County	11.8 has-vaccinated)
+(attribute-filler Covasna_County	13.3 has-vaccinated)
+(attribute-filler Harghita_County	14.6 has-vaccinated)
+(attribute-filler Hunedoara_County	17.3 has-vaccinated)
+(attribute-filler Ialomita_County	14.3 has-vaccinated)
+(attribute-filler Iasi_County	16.8 has-vaccinated)
+(attribute-filler Ilfov_County	18.7 has-vaccinated)
+(attribute-filler Maramures_County	16.6 has-vaccinated)
+(attribute-filler Mehedinti_County	12.4 has-vaccinated)
+(attribute-filler Mures_County	17.7 has-vaccinated)
+(attribute-filler Neamt_County	11.0 has-vaccinated)
+(attribute-filler Olt_County	13.2 has-vaccinated)
+(attribute-filler Prahova_County	17.6 has-vaccinated)
+(attribute-filler Satu_Mare_County	17.0 has-vaccinated)
+(attribute-filler Salaj_County	21.8 has-vaccinated)
+(attribute-filler Suceava_County	17.6 has-vaccinated)
+(attribute-filler Teleorman_County	12.9 has-vaccinated)
+(attribute-filler Tulcea_County	15.5 has-vaccinated)
+(attribute-filler Vaslui_County	11.8 has-vaccinated)
+(attribute-filler Valcea_County	12.2 has-vaccinated)
+(attribute-filler Vrancea_County	16.4 has-vaccinated)
+
+ 
+          <County rdf:about="#1">
+            <has-pop rdf:datatype="&xsd;double">285050.0</has-pop>
+            <has-vaccinated rdf:datatype="&xsd;double">28.0</has-vaccinated>
+          </County>
+         
+          <County rdf:about="#2">
+            <has-pop rdf:datatype="&xsd;double">691106.0</has-pop>
+            <has-vaccinated rdf:datatype="&xsd;double">21.4</has-vaccinated>
+          </County>
+         
+          <County rdf:about="#3">
+            <has-pop rdf:datatype="&xsd;double">684082.0</has-pop>
+            <has-vaccinated rdf:datatype="&xsd;double">11.8</has-vaccinated>
+          </County>
+         
+          <County rdf:about="#4">
+            <has-pop rdf:datatype="&xsd;double">210177.0</has-pop>
+            <has-vaccinated rdf:datatype="&xsd;double">13.3</has-vaccinated>
+          </County>
+         
+          <County rdf:about="#5">
+            <has-pop rdf:datatype="&xsd;double">304969.0</has-pop>
+            <has-vaccinated rdf:datatype="&xsd;double">14.6</has-vaccinated>
+          </County>
+         
+          <County rdf:about="#6">
+            <has-pop rdf:datatype="&xsd;double">396253.0</has-pop>
+            <has-vaccinated rdf:datatype="&xsd;double">17.3</has-vaccinated>
+          </County>
+         
+          <County rdf:about="#7">
+            <has-pop rdf:datatype="&xsd;double">293352.0</has-pop>
+            <has-vaccinated rdf:datatype="&xsd;double">14.3</has-vaccinated>
+          </County>
+         
+          <County rdf:about="#8">
+            <has-pop rdf:datatype="&xsd;double">772348.0</has-pop>
+            <has-vaccinated rdf:datatype="&xsd;double">16.8</has-vaccinated>
+          </County>
+         
+          <County rdf:about="#9">
+            <has-pop rdf:datatype="&xsd;double">999562.0</has-pop>
+            <has-vaccinated rdf:datatype="&xsd;double">18.7</has-vaccinated>
+          </County>
+         
+          <County rdf:about="#10">
+            <has-pop rdf:datatype="&xsd;double">516562.0</has-pop>
+            <has-vaccinated rdf:datatype="&xsd;double">16.6</has-vaccinated>
+          </County>
+         
+          <County rdf:about="#11">
+            <has-pop rdf:datatype="&xsd;double">303878.0</has-pop>
+            <has-vaccinated rdf:datatype="&xsd;double">12.4</has-vaccinated>
+          </County>
+         
+          <County rdf:about="#12">
+            <has-pop rdf:datatype="&xsd;double">550846.0</has-pop>
+            <has-vaccinated rdf:datatype="&xsd;double">17.7</has-vaccinated>
+          </County>
+         
+          <County rdf:about="#13">
+            <has-pop rdf:datatype="&xsd;double">470766.0</has-pop>
+            <has-vaccinated rdf:datatype="&xsd;double">11.0</has-vaccinated>
+          </County>
+         
+          <County rdf:about="#14">
+            <has-pop rdf:datatype="&xsd;double">415530.0</has-pop>
+            <has-vaccinated rdf:datatype="&xsd;double">13.2</has-vaccinated>
+          </County>
+         
+          <County rdf:about="#15">
+            <has-pop rdf:datatype="&xsd;double">762886.0</has-pop>
+            <has-vaccinated rdf:datatype="&xsd;double">17.6</has-vaccinated>
+          </County>
+         
+          <County rdf:about="#16">
+            <has-pop rdf:datatype="&xsd;double">329079.0</has-pop>
+            <has-vaccinated rdf:datatype="&xsd;double">17.0</has-vaccinated>
+          </County>
+         
+          <County rdf:about="#17">
+            <has-pop rdf:datatype="&xsd;double">343347.0</has-pop>
+            <has-vaccinated rdf:datatype="&xsd;double">21.8</has-vaccinated>
+          </County>
+         
+          <County rdf:about="#18">
+            <has-pop rdf:datatype="&xsd;double">634810.0</has-pop>
+            <has-vaccinated rdf:datatype="&xsd;double">17.6</has-vaccinated>
+          </County>
+         
+          <County rdf:about="#19">
+            <has-pop rdf:datatype="&xsd;double">360178.0</has-pop>
+            <has-vaccinated rdf:datatype="&xsd;double">12.9</has-vaccinated>
+          </County>
+         
+          <County rdf:about="#20">
+            <has-pop rdf:datatype="&xsd;double">201462.0</has-pop>
+            <has-vaccinated rdf:datatype="&xsd;double">15.5</has-vaccinated>
+          </County>
+         
+          <County rdf:about="#21">
+            <has-pop rdf:datatype="&xsd;double">395500.0</has-pop>
+            <has-vaccinated rdf:datatype="&xsd;double">11.8</has-vaccinated>
+          </County>
+         
+          <County rdf:about="#22">
+            <has-pop rdf:datatype="&xsd;double">355320.0</has-pop>
+            <has-vaccinated rdf:datatype="&xsd;double">12.2</has-vaccinated>
+          </County>
+         
+          <County rdf:about="#23">
+            <has-pop rdf:datatype="&xsd;double">340310.0</has-pop>
+            <has-vaccinated rdf:datatype="&xsd;double">16.4</has-vaccinated>
+          </County>
+        

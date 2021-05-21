@@ -10,18 +10,17 @@
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
 
-<rdf:RDF
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns="http://example.com/father#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-    xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:double="http://dl-learner.org/examples/double#">
+<rdf:RDF xmlns="http://dl-learner.org/examples/double#"
+     xml:base="http://dl-learner.org/examples/double"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl11="http://www.w3.org/2006/12/owl11#"
+     xmlns:owl11xml="http://www.w3.org/2006/12/owl11-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:double="http://dl-learner.org/examples/double#">
   <owl:Ontology rdf:about=""/>
   <owl:Class rdf:ID="County"/>
-  <owl:ObjectProperty rdf:ID="has-vaccinated"/>
-  <owl:ObjectProperty rdf:ID="has-cases"/>
-  <owl:ObjectProperty rdf:ID="has-pop"/>
 
   <!-- <owl:DatatypeProperty rdf:about="#has-cases">
       <rdfs:domain rdf:resource="#County"/>
@@ -38,44 +37,119 @@
       <rdfs:range rdf:resource="&xsd;double"/>
   </owl:DatatypeProperty>
 
-  <County rdf:ID="#1">
+  <County rdf:about="#CL">
     <has-pop rdf:datatype="&xsd;double">285050.0</has-pop>
     <has-vaccinated rdf:datatype="&xsd;double">28.0</has-vaccinated>
   </County>
   
-  <County rdf:ID="#2">
+  <County rdf:about="#CJ">
     <has-pop rdf:datatype="&xsd;double">691106.0</has-pop>
     <has-vaccinated rdf:datatype="&xsd;double">21.4</has-vaccinated>
   </County>
   
-  <County rdf:ID="#3">
+  <County rdf:about="#CT">
     <has-pop rdf:datatype="&xsd;double">684082.0</has-pop>
     <has-vaccinated rdf:datatype="&xsd;double">11.8</has-vaccinated>
   </County>
   
-  <County rdf:ID="#4">
+  <County rdf:about="#CV">
     <has-pop rdf:datatype="&xsd;double">210177.0</has-pop>
     <has-vaccinated rdf:datatype="&xsd;double">13.3</has-vaccinated>
   </County>
   
-  <County rdf:ID="#5">
+  <County rdf:about="#HR">
     <has-pop rdf:datatype="&xsd;double">304969.0</has-pop>
     <has-vaccinated rdf:datatype="&xsd;double">14.6</has-vaccinated>
   </County>
   
-  <County rdf:ID="#6">
+  <County rdf:about="#HD">
     <has-pop rdf:datatype="&xsd;double">396253.0</has-pop>
     <has-vaccinated rdf:datatype="&xsd;double">17.3</has-vaccinated>
   </County>
   
-  <County rdf:ID="#7">
+  <County rdf:about="#IL">
     <has-pop rdf:datatype="&xsd;double">293352.0</has-pop>
     <has-vaccinated rdf:datatype="&xsd;double">14.3</has-vaccinated>
   </County>
   
-  <County rdf:ID="#8">
+  <County rdf:about="#IS">
     <has-pop rdf:datatype="&xsd;double">772348.0</has-pop>
     <has-vaccinated rdf:datatype="&xsd;double">16.8</has-vaccinated>
+  </County>
+  
+  <County rdf:about="#IF">
+    <has-pop rdf:datatype="&xsd;double">999562.0</has-pop>
+    <has-vaccinated rdf:datatype="&xsd;double">18.7</has-vaccinated>
+  </County>
+  
+  <County rdf:about="#MM">
+    <has-pop rdf:datatype="&xsd;double">516562.0</has-pop>
+    <has-vaccinated rdf:datatype="&xsd;double">16.6</has-vaccinated>
+  </County>
+  
+  <County rdf:about="#MH">
+    <has-pop rdf:datatype="&xsd;double">303878.0</has-pop>
+    <has-vaccinated rdf:datatype="&xsd;double">12.4</has-vaccinated>
+  </County>
+  
+  <County rdf:about="#MS">
+    <has-pop rdf:datatype="&xsd;double">550846.0</has-pop>
+    <has-vaccinated rdf:datatype="&xsd;double">17.7</has-vaccinated>
+  </County>
+  
+  <County rdf:about="#NT">
+    <has-pop rdf:datatype="&xsd;double">470766.0</has-pop>
+    <has-vaccinated rdf:datatype="&xsd;double">11.0</has-vaccinated>
+  </County>
+  
+  <County rdf:about="#OT">
+    <has-pop rdf:datatype="&xsd;double">415530.0</has-pop>
+    <has-vaccinated rdf:datatype="&xsd;double">13.2</has-vaccinated>
+  </County>
+  
+  <County rdf:about="#PH">
+    <has-pop rdf:datatype="&xsd;double">762886.0</has-pop>
+    <has-vaccinated rdf:datatype="&xsd;double">17.6</has-vaccinated>
+  </County>
+  
+  <County rdf:about="#SM">
+    <has-pop rdf:datatype="&xsd;double">329079.0</has-pop>
+    <has-vaccinated rdf:datatype="&xsd;double">17.0</has-vaccinated>
+  </County>
+  
+  <County rdf:about="#SJ">
+    <has-pop rdf:datatype="&xsd;double">343347.0</has-pop>
+    <has-vaccinated rdf:datatype="&xsd;double">21.8</has-vaccinated>
+  </County>
+  
+  <County rdf:about="#SV">
+    <has-pop rdf:datatype="&xsd;double">634810.0</has-pop>
+    <has-vaccinated rdf:datatype="&xsd;double">17.6</has-vaccinated>
+  </County>
+  
+  <County rdf:about="#TR">
+    <has-pop rdf:datatype="&xsd;double">360178.0</has-pop>
+    <has-vaccinated rdf:datatype="&xsd;double">12.9</has-vaccinated>
+  </County>
+  
+  <County rdf:about="#TL">
+    <has-pop rdf:datatype="&xsd;double">201462.0</has-pop>
+    <has-vaccinated rdf:datatype="&xsd;double">15.5</has-vaccinated>
+  </County>
+  
+  <County rdf:about="#VS">
+    <has-pop rdf:datatype="&xsd;double">395500.0</has-pop>
+    <has-vaccinated rdf:datatype="&xsd;double">11.8</has-vaccinated>
+  </County>
+  
+  <County rdf:about="#VL">
+    <has-pop rdf:datatype="&xsd;double">355320.0</has-pop>
+    <has-vaccinated rdf:datatype="&xsd;double">12.2</has-vaccinated>
+  </County>
+  
+  <County rdf:about="#VN">
+    <has-pop rdf:datatype="&xsd;double">340310.0</has-pop>
+    <has-vaccinated rdf:datatype="&xsd;double">16.4</has-vaccinated>
   </County>
 
 </rdf:RDF>

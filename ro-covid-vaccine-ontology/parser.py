@@ -67,10 +67,14 @@ if __name__ == '__main__':
 
     rules_cases, rules_incidence, rules_vaccinated, owl_kb = [], [], [], []
     i = 1
+    
+    # dl-learner
+    pos, negs = [], []
 
     for county in counties_cases.keys():
       if county in lut:
-        cases = f'(attribute-filler {lut[county]}	{counties_cases[county] - counties_cases_yesterday[county]} has-cases)\n'
+        today_cases = counties_cases[county] - counties_cases_yesterday[county]
+        cases = f'(attribute-filler {lut[county]}	{today_cases} has-cases)\n'
         incidence = f'(attribute-filler {lut[county]}	{counties_incidence[county]} has-incidence)\n'
         vaccinated = f'(attribute-filler {lut[county]}	{counties_vaccinated[county]} has-vaccinated)\n'
 
@@ -78,12 +82,18 @@ if __name__ == '__main__':
         rules_incidence.append(incidence)
         rules_vaccinated.append(vaccinated)
 
+        # dl-learner
         owl = f""" 
-          <County rdf:ID="#{i}">
+          <County rdf:ID="#{county}">
             <has-pop rdf:datatype="&xsd;double">{float(pop[lut[county]])}</has-pop>
             <has-vaccinated rdf:datatype="&xsd;double">{counties_vaccinated[county]}</has-vaccinated>
           </County>
         """
+
+        if today_cases > 25:
+          pos.append(f'kb:{county}')
+        else:
+          negs.append(f'kb:{county}')
 
         owl_kb.append(owl)
         i += 1
@@ -98,5 +108,13 @@ if __name__ == '__main__':
       fd_counties.writelines(rules_incidence)
       fd_counties.write('\n')
       fd_counties.writelines(rules_vaccinated)
+
+      # dl-learner
       fd_counties.write('\n')
       fd_counties.writelines(owl_kb)
+
+      fd_counties.write('\n')
+      fd_counties.writelines(', '.join(pos))
+      fd_counties.write('\n')
+      fd_counties.writelines(', '.join(negs))
+

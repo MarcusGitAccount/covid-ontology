@@ -4,8 +4,8 @@
 (in-tbox covid-KBS :init t)
 
 (signature :atomic-concepts (Person Male Female Gender Age-Group Child Teenager Adult Senior 
-                              Disease Diabetes Cardiovascular Obesity Fever Muscular-pain Nausea Fatigue 
-                              Vaccination-Phase Phase-1 Phase-2 Phase-3 
+                              Disease 
+                              Vaccination-Phase
                               Job Nurse Waiter Janitor Engineer Doctor Military
                               County City
                               Vaccine VaccineType SideEffect
@@ -24,6 +24,7 @@
               (part-of :domain County :range city) 
               (in-scenario :domain County :range Scenario) 
               (has-restriction :domain Scenario :range Restriction-Type)
+              (has-next :domain Vaccination-Phase :range Vaccination-Phase)
            )
            :attributes(
                (integer has-pop)
@@ -38,7 +39,6 @@
 ; (define-concrete-domain-attribute has-incidence :domain County :type integer)
 ; (define-concrete-domain-attribute has-cases :domain County :type integer)
 ; (define-concrete-domain-attribute has-age :domain Person :type integer)
-
 
 (instance  Vaslui_County County)
 (instance  Cluj_County County)
@@ -177,6 +177,15 @@
 (attribute-filler Valcea_County	12.2 has-vaccinated)
 (attribute-filler Vrancea_County	16.4 has-vaccinated)
 
+; TODO: add has-disease roles
+(instance Diabetes Disease)
+(instance Cardiovascular Disease)
+(instance Obesity Disease)
+(instance Fever Disease)
+(instance Muscular-Pain Disease) 
+(instance Nausea Disease) 
+(instance Fatigue Disease) 
+
 (instance Marcus (and Male))
 (instance Rares (and Male))
 (instance Dennis (and Male))
@@ -187,6 +196,8 @@
 (instance Maria (and Female))
 (instance Dragos (and Male))
 (instance Stefana (and Female))
+
+(instance Nurse Medical-Job)
 
 (related Marcus Engineer has-job)
 (related Rares Nurse has-job)
@@ -210,16 +221,16 @@
 (attribute-filler Dragos 15 has-age)
 (attribute-filler Stefana 15 has-age)
 
-(equivalent Medical-Job (or Nurse Doctor))
-(equivalent Essential-Job (or Janitor Military))
+(equivalent Job (or Essential-Job  Medical-Job))
+; (equivalent Essential-Job (or Janitor Military))
 ; (equivalent Age-Group (or Child Teenager Adult Senior))
 
 ; Partition design pattern
 (disjoint Male Female)
 (disjoint Child Teenager Adult Senior)
-(disjoint Phase-1 Phase-2 Phase-3)
-(disjoint Nurse Waiter Janitor Engineer)
-(disjoint Diabetes Cardiovascular Obesity Fever Muscular-pain Nausea Fatigue)
+; (disjoint Phase-1 Phase-2 Phase-3)
+; (disjoint Nurse Waiter Janitor Engineer)
+; (disjoint Diabetes Cardiovascular Obesity Fever Muscular-pain Nausea Fatigue)
 
 (equivalent Scenario (or Red Yellow Green))
 (equivalent Restriction-Type (or Lockdown Hour-Restriction No-Restriction))
@@ -227,13 +238,20 @@
 (equivalent Person (or Male Female))
 (equivalent Person (or Child Teenager Adult Senior))
 (equivalent Job (or Nurse Waiter Janitor Engineer))
-(equivalent Disease (or Diabetes Cardiovascular Obesity Fever Muscular-pain Nausea Fatigue))
-(equivalent Vaccination-Phase (or Phase-1 Phase-2 Phase-3))
+; (equivalent Disease (or Diabetes Cardiovascular Obesity Fever Muscular-pain Nausea Fatigue))
+; (equivalent Vaccination-Phase (or Phase-1 Phase-2 Phase-3))
 
 (equivalent Child (and Person (max has-age 12)))
-(equivalent Teenager (and Person (max has-age 13) (max has-age 19)))
-(equivalent Adult (and Person (max has-age 20) (max has-age 64)))
+(equivalent Teenager (and Person (min has-age 13) (max has-age 19)))
+(equivalent Adult (and Person (min has-age 20) (max has-age 64)))
 (equivalent Senior (and Person (min has-age 65)))
+
+(instance Phase-1 Vaccination-Phase)
+(instance Phase-2 Vaccination-Phase)
+(instance Phase-3 Vaccination-Phase)
+
+(related Phase-1 Phase-2 has-next)
+(related Phase-2 Phase-3 has-next)
 
 (instance arn-based VaccineType)	
 (instance viral-vector VaccineType)	
@@ -242,20 +260,30 @@
 (related az viral-vector has-type)	
 (related az blood-clot has-side-effect)
 
+; TODO: Refolosire design patern în alt loc
 ; Content ODP(Part of)
-(implies Phase-1 Phase-2)
+; (implies Phase-1 Phase-2)
 ; dacă te poți vaccina în faza 2 <=> te poți vaccina și în faza 3
-(implies Phase-2 Phase-3)
+; (implies Phase-2 Phase-3)
+
+; has-next phases
 
 
-; QUESTION: FAILED
-; (define-rule (?x ?y vaccinate-in-phase)
-;   (or (and (?x ?z has-job) (?z Medical-Job) (?y Phase-1))
-;       (and (or (and (?x ?z has-job) (?z Essential-Job)) (?x ?w has-disease)) (?y Phase-2))
-;       (?y Phase-3)))
-; 
+; (related Rares Phase-1 vaccinate-in-phase)
+
+; R1
+(define-rule (?x Phase-1 vaccinate-in-phase)
+  (or (and (?x ?z has-job) (?z Medical-Job))))
+
+(define-rule (?x Phase-2 vaccinate-in-phase)
+  (or (and (?x ?z has-job) (?z Essential-Job)) 
+      (and (?x ?w has-disease) (?w Disease))))
+
+
+(run-all-rules)
 
 ; QUESTION: Cum folosim atribute în reguli?
+; A: Nu putem, regulile permit doar tipuri și instanțe. => putem folosi grupări asemănătoare ca și la grupa de vârstă
 ; (define-rule (?x ?y in-age-group) 
 ;   (or (and (min ?x has-age 0) ( max ?x has-age 13) (?y Child))
 ;       (and (min ?x has-age 14) ( max ?x has-age 25) (?y Teenager))
@@ -280,7 +308,6 @@
 ;       (and (?x Yellow) (?y Hour-Restriction))
 ;       (and (?x Green) (?y No-Restriction))))
 
-(run-all-rules)
 
 ; Q1 : Câte tipuri de vaccin sunt disponibile?
 

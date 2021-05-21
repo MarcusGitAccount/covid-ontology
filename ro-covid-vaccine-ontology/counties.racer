@@ -71,118 +71,120 @@
 (attribute-filler Vrancea_County	16.4 has-vaccinated)
 
  
-          <County rdf:about="#1">
+          <County rdf:ID="#CL">
             <has-pop rdf:datatype="&xsd;double">285050.0</has-pop>
             <has-vaccinated rdf:datatype="&xsd;double">28.0</has-vaccinated>
           </County>
          
-          <County rdf:about="#2">
+          <County rdf:ID="#CJ">
             <has-pop rdf:datatype="&xsd;double">691106.0</has-pop>
             <has-vaccinated rdf:datatype="&xsd;double">21.4</has-vaccinated>
           </County>
          
-          <County rdf:about="#3">
+          <County rdf:ID="#CT">
             <has-pop rdf:datatype="&xsd;double">684082.0</has-pop>
             <has-vaccinated rdf:datatype="&xsd;double">11.8</has-vaccinated>
           </County>
          
-          <County rdf:about="#4">
+          <County rdf:ID="#CV">
             <has-pop rdf:datatype="&xsd;double">210177.0</has-pop>
             <has-vaccinated rdf:datatype="&xsd;double">13.3</has-vaccinated>
           </County>
          
-          <County rdf:about="#5">
+          <County rdf:ID="#HR">
             <has-pop rdf:datatype="&xsd;double">304969.0</has-pop>
             <has-vaccinated rdf:datatype="&xsd;double">14.6</has-vaccinated>
           </County>
          
-          <County rdf:about="#6">
+          <County rdf:ID="#HD">
             <has-pop rdf:datatype="&xsd;double">396253.0</has-pop>
             <has-vaccinated rdf:datatype="&xsd;double">17.3</has-vaccinated>
           </County>
          
-          <County rdf:about="#7">
+          <County rdf:ID="#IL">
             <has-pop rdf:datatype="&xsd;double">293352.0</has-pop>
             <has-vaccinated rdf:datatype="&xsd;double">14.3</has-vaccinated>
           </County>
          
-          <County rdf:about="#8">
+          <County rdf:ID="#IS">
             <has-pop rdf:datatype="&xsd;double">772348.0</has-pop>
             <has-vaccinated rdf:datatype="&xsd;double">16.8</has-vaccinated>
           </County>
          
-          <County rdf:about="#9">
+          <County rdf:ID="#IF">
             <has-pop rdf:datatype="&xsd;double">999562.0</has-pop>
             <has-vaccinated rdf:datatype="&xsd;double">18.7</has-vaccinated>
           </County>
          
-          <County rdf:about="#10">
+          <County rdf:ID="#MM">
             <has-pop rdf:datatype="&xsd;double">516562.0</has-pop>
             <has-vaccinated rdf:datatype="&xsd;double">16.6</has-vaccinated>
           </County>
          
-          <County rdf:about="#11">
+          <County rdf:ID="#MH">
             <has-pop rdf:datatype="&xsd;double">303878.0</has-pop>
             <has-vaccinated rdf:datatype="&xsd;double">12.4</has-vaccinated>
           </County>
          
-          <County rdf:about="#12">
+          <County rdf:ID="#MS">
             <has-pop rdf:datatype="&xsd;double">550846.0</has-pop>
             <has-vaccinated rdf:datatype="&xsd;double">17.7</has-vaccinated>
           </County>
          
-          <County rdf:about="#13">
+          <County rdf:ID="#NT">
             <has-pop rdf:datatype="&xsd;double">470766.0</has-pop>
             <has-vaccinated rdf:datatype="&xsd;double">11.0</has-vaccinated>
           </County>
          
-          <County rdf:about="#14">
+          <County rdf:ID="#OT">
             <has-pop rdf:datatype="&xsd;double">415530.0</has-pop>
             <has-vaccinated rdf:datatype="&xsd;double">13.2</has-vaccinated>
           </County>
          
-          <County rdf:about="#15">
+          <County rdf:ID="#PH">
             <has-pop rdf:datatype="&xsd;double">762886.0</has-pop>
             <has-vaccinated rdf:datatype="&xsd;double">17.6</has-vaccinated>
           </County>
          
-          <County rdf:about="#16">
+          <County rdf:ID="#SM">
             <has-pop rdf:datatype="&xsd;double">329079.0</has-pop>
             <has-vaccinated rdf:datatype="&xsd;double">17.0</has-vaccinated>
           </County>
          
-          <County rdf:about="#17">
+          <County rdf:ID="#SJ">
             <has-pop rdf:datatype="&xsd;double">343347.0</has-pop>
             <has-vaccinated rdf:datatype="&xsd;double">21.8</has-vaccinated>
           </County>
          
-          <County rdf:about="#18">
+          <County rdf:ID="#SV">
             <has-pop rdf:datatype="&xsd;double">634810.0</has-pop>
             <has-vaccinated rdf:datatype="&xsd;double">17.6</has-vaccinated>
           </County>
          
-          <County rdf:about="#19">
+          <County rdf:ID="#TR">
             <has-pop rdf:datatype="&xsd;double">360178.0</has-pop>
             <has-vaccinated rdf:datatype="&xsd;double">12.9</has-vaccinated>
           </County>
          
-          <County rdf:about="#20">
+          <County rdf:ID="#TL">
             <has-pop rdf:datatype="&xsd;double">201462.0</has-pop>
             <has-vaccinated rdf:datatype="&xsd;double">15.5</has-vaccinated>
           </County>
          
-          <County rdf:about="#21">
+          <County rdf:ID="#VS">
             <has-pop rdf:datatype="&xsd;double">395500.0</has-pop>
             <has-vaccinated rdf:datatype="&xsd;double">11.8</has-vaccinated>
           </County>
          
-          <County rdf:about="#22">
+          <County rdf:ID="#VL">
             <has-pop rdf:datatype="&xsd;double">355320.0</has-pop>
             <has-vaccinated rdf:datatype="&xsd;double">12.2</has-vaccinated>
           </County>
          
-          <County rdf:about="#23">
+          <County rdf:ID="#VN">
             <has-pop rdf:datatype="&xsd;double">340310.0</has-pop>
             <has-vaccinated rdf:datatype="&xsd;double">16.4</has-vaccinated>
           </County>
         
+kb:CJ, kb:IF, kb:PH
+kb:CL, kb:CT, kb:CV, kb:HR, kb:HD, kb:IL, kb:IS, kb:MM, kb:MH, kb:MS, kb:NT, kb:OT, kb:SM, kb:SJ, kb:SV, kb:TR, kb:TL, kb:VS, kb:VL, kb:VN

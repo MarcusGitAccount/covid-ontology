@@ -1,0 +1,10 @@
+30:classAssertion('Class','NamedIndividual').
+13:subClassOf('Class','Class').
+12:declaration('Class').
+9:objectPropertyAssertion('ObjectProperty','NamedIndividual','NamedIndividual').
+4:declaration('ObjectProperty').
+3:objectPropertyRange('ObjectProperty','Class').
+3:equivalentClasses('Class',objectIntersectionOf('Class',objectHasValue('ObjectProperty','NamedIndividual'))).
+2:objectPropertyDomain('ObjectProperty','Class').
+1:inverseObjectProperties('ObjectProperty','ObjectProperty').
+1:equivalentClasses('Class',objectIntersectionOf('Class',objectSomeValuesFrom('ObjectProperty','Class'))).

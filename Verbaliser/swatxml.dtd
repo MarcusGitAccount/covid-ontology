@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!ELEMENT swatontology (description*, lexicon*)>
+<!ELEMENT description (title, text)>
+<!ATTLIST description iri CDATA #REQUIRED>
+<!ELEMENT title (#PCDATA)>
+<!ATTLIST title type CDATA #REQUIRED>
+<!ELEMENT text (subgroup)*>
+<!ELEMENT subgroup (sentence)*>
+<!ATTLIST subgroup id CDATA #REQUIRED>
+<!ELEMENT sentence (#PCDATA | entity)*>
+<!ATTLIST sentence axiom_id CDATA #IMPLIED>
+<!ATTLIST sentence owlterm CDATA #IMPLIED>
+<!ELEMENT entity (#PCDATA)>
+<!ATTLIST entity iri CDATA #REQUIRED>
+<!ELEMENT lexicon (singular, plural)>
+<!ATTLIST lexicon type CDATA #REQUIRED>
+<!ATTLIST lexicon identifier CDATA #REQUIRED>
+<!ATTLIST lexicon pos CDATA #REQUIRED>
+<!ELEMENT singular (#PCDATA)>
+<!ELEMENT plural (#PCDATA)>

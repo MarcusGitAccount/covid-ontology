@@ -1,0 +1,801 @@
+<Ontology ontologyIRI="http://www.semanticweb.org/ont23.owl">
+<!--Created by SWAT Natural Language Editor-->
+<Declaration>
+<NamedIndividual IRI="#Aberdeen"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#Aberdeenshire"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#Alehousewells_Primary_School"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#Bogbeth_Park"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#Fetternear_Estate"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#Garioch"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#Inverurie"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#John_Fyfe"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#Kemnay"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#Kemnay_Academy"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#Kemnay_Bowling_Club"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#Kemnay_House"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#Kemnay_Parish_Church"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#Kemnay_Primary_School"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#Kemnay_Quarry"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#Kemnay_Roman_Catholic_Church"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#Kemnay_Skate_Park"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#Kenmay_Quarry"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#Scotland"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#St_Anne's_Church"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#The_Bennachie_Lodge"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#The_Burnett_Arms_Hotel"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#The_Church_of_Scotland"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#The_Forth_Railway_Bridge"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#The_Glasgow_Cenotaph"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#The_Kemnay_Academy_2014_extension_plan"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#the_River_Don"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#The_Roman_Catholic_Church"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#The_Scottish_Episcopal_Church"/>
+</Declaration>
+<Declaration>
+<NamedIndividual IRI="#Westhill"/>
+</Declaration>
+<Declaration>
+<Class IRI="#academy_school"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bed-and-breakfast"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bowling_club"/>
+</Declaration>
+<Declaration>
+<Class IRI="#category-A-listed_building"/>
+</Declaration>
+<Declaration>
+<Class IRI="#Christian_denomination"/>
+</Declaration>
+<Declaration>
+<Class IRI="#council_committee_area"/>
+</Declaration>
+<Declaration>
+<Class IRI="#country"/>
+</Declaration>
+<Declaration>
+<Class IRI="#county"/>
+</Declaration>
+<Declaration>
+<Class IRI="#estate"/>
+</Declaration>
+<Declaration>
+<Class IRI="#granite"/>
+</Declaration>
+<Declaration>
+<Class IRI="#guest_house"/>
+</Declaration>
+<Declaration>
+<Class IRI="#house"/>
+</Declaration>
+<Declaration>
+<Class IRI="#place_of_interest"/>
+</Declaration>
+<Declaration>
+<Class IRI="#playing_field"/>
+</Declaration>
+<Declaration>
+<Class IRI="#primary_school"/>
+</Declaration>
+<Declaration>
+<Class IRI="#public_house"/>
+</Declaration>
+<Declaration>
+<Class IRI="#settlement"/>
+</Declaration>
+<Declaration>
+<Class IRI="#skate_park"/>
+</Declaration>
+<Declaration>
+<Class IRI="#town"/>
+</Declaration>
+<Declaration>
+<Class IRI="#village"/>
+</Declaration>
+<Declaration>
+<ObjectProperty IRI="#is_constructed_using"/>
+</Declaration>
+<Declaration>
+<ObjectProperty IRI="#is_extending"/>
+</Declaration>
+<Declaration>
+<ObjectProperty IRI="#is_founded_by"/>
+</Declaration>
+<Declaration>
+<ObjectProperty IRI="#is_located_in"/>
+</Declaration>
+<Declaration>
+<ObjectProperty IRI="#is_located_on"/>
+</Declaration>
+<Declaration>
+<ObjectProperty IRI="#is_more_populous_than"/>
+</Declaration>
+<Declaration>
+<ObjectProperty IRI="#is_provided_with"/>
+</Declaration>
+<Declaration>
+<ObjectProperty IRI="#is_quarried_in"/>
+</Declaration>
+<Declaration>
+<ObjectProperty IRI="#is_west_of"/>
+</Declaration>
+<Declaration>
+<DataProperty IRI="#has_approximate_population_of"/>
+</Declaration>
+<Declaration>
+<DataProperty IRI="#is_dated"/>
+</Declaration>
+<Declaration>
+<DataProperty IRI="#is_opened_in"/>
+</Declaration>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#Aberdeen</IRI>
+<Literal>Aberdeen</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#Aberdeenshire</IRI>
+<Literal>Aberdeenshire</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#Alehousewells_Primary_School</IRI>
+<Literal>Alehousewells Primary School</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#Bogbeth_Park</IRI>
+<Literal>Bogbeth Park</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#Fetternear_Estate</IRI>
+<Literal>Fetternear Estate</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#Garioch</IRI>
+<Literal>Garioch</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#Inverurie</IRI>
+<Literal>Inverurie</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#John_Fyfe</IRI>
+<Literal>John Fyfe</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#Kemnay</IRI>
+<Literal>Kemnay</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#Kemnay_Academy</IRI>
+<Literal>Kemnay Academy</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#Kemnay_Bowling_Club</IRI>
+<Literal>Kemnay Bowling Club</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#Kemnay_House</IRI>
+<Literal>Kemnay House</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#Kemnay_Parish_Church</IRI>
+<Literal>Kemnay Parish Church</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#Kemnay_Primary_School</IRI>
+<Literal>Kemnay Primary School</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#Kemnay_Quarry</IRI>
+<Literal>Kemnay Quarry</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#Kemnay_Roman_Catholic_Church</IRI>
+<Literal>Kemnay Roman Catholic Church</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#Kemnay_Skate_Park</IRI>
+<Literal>Kemnay Skate Park</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#Kenmay_Quarry</IRI>
+<Literal>Kenmay Quarry</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#Scotland</IRI>
+<Literal>Scotland</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#St_Anne's_Church</IRI>
+<Literal>St Anne's Church</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#The_Bennachie_Lodge</IRI>
+<Literal>The Bennachie Lodge</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#The_Burnett_Arms_Hotel</IRI>
+<Literal>The Burnett Arms Hotel</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#The_Church_of_Scotland</IRI>
+<Literal>The Church of Scotland</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#The_Forth_Railway_Bridge</IRI>
+<Literal>The Forth Railway Bridge</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#The_Glasgow_Cenotaph</IRI>
+<Literal>The Glasgow Cenotaph</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#The_Kemnay_Academy_2014_extension_plan</IRI>
+<Literal>The Kemnay Academy 2014 extension plan</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#the_River_Don</IRI>
+<Literal>the River Don</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#The_Roman_Catholic_Church</IRI>
+<Literal>The Roman Catholic Church</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#The_Scottish_Episcopal_Church</IRI>
+<Literal>The Scottish Episcopal Church</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/namedIndividual"/>
+<IRI>#Westhill</IRI>
+<Literal>Westhill</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/class"/>
+<IRI>#academy_school</IRI>
+<Literal>academy school</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/class"/>
+<IRI>#bed-and-breakfast</IRI>
+<Literal>bed-and-breakfast</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/class"/>
+<IRI>#bowling_club</IRI>
+<Literal>bowling club</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/class"/>
+<IRI>#category-A-listed_building</IRI>
+<Literal>category-A-listed building</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/class"/>
+<IRI>#Christian_denomination</IRI>
+<Literal>Christian denomination</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/class"/>
+<IRI>#council_committee_area</IRI>
+<Literal>council committee area</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/class"/>
+<IRI>#country</IRI>
+<Literal>country</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/class"/>
+<IRI>#county</IRI>
+<Literal>county</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/class"/>
+<IRI>#estate</IRI>
+<Literal>estate</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/class"/>
+<IRI>#granite</IRI>
+<Literal>granite</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/class"/>
+<IRI>#guest_house</IRI>
+<Literal>guest house</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/class"/>
+<IRI>#house</IRI>
+<Literal>house</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/class"/>
+<IRI>#place_of_interest</IRI>
+<Literal>place of interest</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/class"/>
+<IRI>#playing_field</IRI>
+<Literal>playing field</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/class"/>
+<IRI>#primary_school</IRI>
+<Literal>primary school</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/class"/>
+<IRI>#public_house</IRI>
+<Literal>public house</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/class"/>
+<IRI>#settlement</IRI>
+<Literal>settlement</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/class"/>
+<IRI>#skate_park</IRI>
+<Literal>skate park</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/class"/>
+<IRI>#town</IRI>
+<Literal>town</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/class"/>
+<IRI>#village</IRI>
+<Literal>village</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/objectProperty"/>
+<IRI>#is_constructed_using</IRI>
+<Literal>is constructed using</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/objectProperty"/>
+<IRI>#is_extending</IRI>
+<Literal>is extending</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/objectProperty"/>
+<IRI>#is_founded_by</IRI>
+<Literal>is founded by</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/objectProperty"/>
+<IRI>#is_located_in</IRI>
+<Literal>is located in</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/objectProperty"/>
+<IRI>#is_located_on</IRI>
+<Literal>is located on</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/objectProperty"/>
+<IRI>#is_more_populous_than</IRI>
+<Literal>is more populous than</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/objectProperty"/>
+<IRI>#is_provided_with</IRI>
+<Literal>is provided with</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/objectProperty"/>
+<IRI>#is_quarried_in</IRI>
+<Literal>is quarried in</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/objectProperty"/>
+<IRI>#is_west_of</IRI>
+<Literal>is west of</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/dataProperty"/>
+<IRI>#has_approximate_population_of</IRI>
+<Literal>has approximate population of</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/dataProperty"/>
+<IRI>#is_dated</IRI>
+<Literal>is dated</Literal>
+</AnnotationAssertion>
+<AnnotationAssertion>
+<AnnotationProperty IRI="http://www.swatproject.org/dataProperty"/>
+<IRI>#is_opened_in</IRI>
+<Literal>is opened in</Literal>
+</AnnotationAssertion>
+<ClassAssertion>
+<Class IRI="#village"/>
+<NamedIndividual IRI="#Kemnay"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectHasValue>
+<ObjectProperty IRI="#is_west_of"/>
+<NamedIndividual IRI="#Aberdeen"/>
+</ObjectHasValue>
+<NamedIndividual IRI="#Kemnay"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectHasValue>
+<ObjectProperty IRI="#is_located_in"/>
+<NamedIndividual IRI="#Garioch"/>
+</ObjectHasValue>
+<NamedIndividual IRI="#Kemnay"/>
+</ClassAssertion>
+<ClassAssertion>
+<Class IRI="#council_committee_area"/>
+<NamedIndividual IRI="#Garioch"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectHasValue>
+<ObjectProperty IRI="#is_located_in"/>
+<NamedIndividual IRI="#Aberdeenshire"/>
+</ObjectHasValue>
+<NamedIndividual IRI="#Garioch"/>
+</ClassAssertion>
+<ClassAssertion>
+<Class IRI="#county"/>
+<NamedIndividual IRI="#Aberdeenshire"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectHasValue>
+<ObjectProperty IRI="#is_located_in"/>
+<NamedIndividual IRI="#Scotland"/>
+</ObjectHasValue>
+<NamedIndividual IRI="#Aberdeenshire"/>
+</ClassAssertion>
+<ClassAssertion>
+<Class IRI="#country"/>
+<NamedIndividual IRI="#Scotland"/>
+</ClassAssertion>
+<SubClassOf>
+<Class IRI="#village"/>
+<Class IRI="#settlement"/>
+</SubClassOf>
+<SubClassOf>
+<Class IRI="#town"/>
+<Class IRI="#settlement"/>
+</SubClassOf>
+<ClassAssertion>
+<DataHasValue>
+<DataProperty IRI="#has_approximate_population_of"/>
+<Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">4000</Literal>
+</DataHasValue>
+<NamedIndividual IRI="#Kemnay"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectHasValue>
+<ObjectProperty IRI="#is_more_populous_than"/>
+<NamedIndividual IRI="#Kemnay"/>
+</ObjectHasValue>
+<NamedIndividual IRI="#Inverurie"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectHasValue>
+<ObjectProperty IRI="#is_more_populous_than"/>
+<NamedIndividual IRI="#Westhill"/>
+</ObjectHasValue>
+<NamedIndividual IRI="#Inverurie"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectHasValue>
+<ObjectProperty IRI="#is_more_populous_than"/>
+<NamedIndividual IRI="#Kemnay"/>
+</ObjectHasValue>
+<NamedIndividual IRI="#Westhill"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectHasValue>
+<ObjectProperty IRI="#is_located_on"/>
+<NamedIndividual IRI="#the_River_Don"/>
+</ObjectHasValue>
+<NamedIndividual IRI="#Kemnay"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectIntersectionOf>
+<Class IRI="#house"/>
+<ObjectHasValue>
+<ObjectProperty IRI="#is_located_in"/>
+<NamedIndividual IRI="#Kemnay"/>
+</ObjectHasValue>
+</ObjectIntersectionOf>
+<NamedIndividual IRI="#Kemnay_House"/>
+</ClassAssertion>
+<ClassAssertion>
+<Class IRI="#category-A-listed_building"/>
+<NamedIndividual IRI="#Kemnay_House"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectHasValue>
+<ObjectProperty IRI="#is_located_in"/>
+<NamedIndividual IRI="#Kemnay"/>
+</ObjectHasValue>
+<NamedIndividual IRI="#St_Anne's_Church"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectHasValue>
+<ObjectProperty IRI="#is_located_in"/>
+<NamedIndividual IRI="#Kemnay"/>
+</ObjectHasValue>
+<NamedIndividual IRI="#Kemnay_Parish_Church"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectHasValue>
+<ObjectProperty IRI="#is_located_in"/>
+<NamedIndividual IRI="#Kemnay"/>
+</ObjectHasValue>
+<NamedIndividual IRI="#Kemnay_Roman_Catholic_Church"/>
+</ClassAssertion>
+<ClassAssertion>
+<Class IRI="#Christian_denomination"/>
+<NamedIndividual IRI="#The_Scottish_Episcopal_Church"/>
+</ClassAssertion>
+<ClassAssertion>
+<Class IRI="#Christian_denomination"/>
+<NamedIndividual IRI="#The_Church_of_Scotland"/>
+</ClassAssertion>
+<ClassAssertion>
+<Class IRI="#Christian_denomination"/>
+<NamedIndividual IRI="#The_Roman_Catholic_Church"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectSomeValuesFrom>
+<ObjectProperty IRI="#is_provided_with"/>
+<Class IRI="#guest_house"/>
+</ObjectSomeValuesFrom>
+<NamedIndividual IRI="#Kemnay"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectSomeValuesFrom>
+<ObjectProperty IRI="#is_provided_with"/>
+<Class IRI="#bed-and-breakfast"/>
+</ObjectSomeValuesFrom>
+<NamedIndividual IRI="#Kemnay"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectSomeValuesFrom>
+<ObjectProperty IRI="#is_provided_with"/>
+<Class IRI="#public_house"/>
+</ObjectSomeValuesFrom>
+<NamedIndividual IRI="#Kemnay"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectIntersectionOf>
+<Class IRI="#public_house"/>
+<ObjectHasValue>
+<ObjectProperty IRI="#is_located_in"/>
+<NamedIndividual IRI="#Kemnay"/>
+</ObjectHasValue>
+</ObjectIntersectionOf>
+<NamedIndividual IRI="#The_Bennachie_Lodge"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectIntersectionOf>
+<Class IRI="#public_house"/>
+<ObjectHasValue>
+<ObjectProperty IRI="#is_located_in"/>
+<NamedIndividual IRI="#Kemnay"/>
+</ObjectHasValue>
+</ObjectIntersectionOf>
+<NamedIndividual IRI="#The_Burnett_Arms_Hotel"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectIntersectionOf>
+<DataHasValue>
+<DataProperty IRI="#is_opened_in"/>
+<Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1830</Literal>
+</DataHasValue>
+<ObjectHasValue>
+<ObjectProperty IRI="#is_founded_by"/>
+<NamedIndividual IRI="#John_Fyfe"/>
+</ObjectHasValue>
+</ObjectIntersectionOf>
+<NamedIndividual IRI="#Kemnay_Quarry"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectSomeValuesFrom>
+<ObjectProperty IRI="#is_constructed_using"/>
+<ObjectIntersectionOf>
+<Class IRI="#granite"/>
+<ObjectHasValue>
+<ObjectProperty IRI="#is_quarried_in"/>
+<NamedIndividual IRI="#Kenmay_Quarry"/>
+</ObjectHasValue>
+</ObjectIntersectionOf>
+</ObjectSomeValuesFrom>
+<NamedIndividual IRI="#The_Glasgow_Cenotaph"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectSomeValuesFrom>
+<ObjectProperty IRI="#is_constructed_using"/>
+<ObjectIntersectionOf>
+<Class IRI="#granite"/>
+<ObjectHasValue>
+<ObjectProperty IRI="#is_quarried_in"/>
+<NamedIndividual IRI="#Kenmay_Quarry"/>
+</ObjectHasValue>
+</ObjectIntersectionOf>
+</ObjectSomeValuesFrom>
+<NamedIndividual IRI="#The_Forth_Railway_Bridge"/>
+</ClassAssertion>
+<ClassAssertion>
+<Class IRI="#estate"/>
+<NamedIndividual IRI="#Fetternear_Estate"/>
+</ClassAssertion>
+<ClassAssertion>
+<Class IRI="#place_of_interest"/>
+<NamedIndividual IRI="#Fetternear_Estate"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectHasValue>
+<ObjectProperty IRI="#is_located_in"/>
+<NamedIndividual IRI="#Kemnay"/>
+</ObjectHasValue>
+<NamedIndividual IRI="#Fetternear_Estate"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectIntersectionOf>
+<Class IRI="#bowling_club"/>
+<ObjectHasValue>
+<ObjectProperty IRI="#is_located_in"/>
+<NamedIndividual IRI="#Kemnay"/>
+</ObjectHasValue>
+</ObjectIntersectionOf>
+<NamedIndividual IRI="#Kemnay_Bowling_Club"/>
+</ClassAssertion>
+<ClassAssertion>
+<Class IRI="#playing_field"/>
+<NamedIndividual IRI="#Bogbeth_Park"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectHasValue>
+<ObjectProperty IRI="#is_located_in"/>
+<NamedIndividual IRI="#Kemnay"/>
+</ObjectHasValue>
+<NamedIndividual IRI="#Bogbeth_Park"/>
+</ClassAssertion>
+<ClassAssertion>
+<Class IRI="#skate_park"/>
+<NamedIndividual IRI="#Kemnay_Skate_Park"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectHasValue>
+<ObjectProperty IRI="#is_located_in"/>
+<NamedIndividual IRI="#Bogbeth_Park"/>
+</ObjectHasValue>
+<NamedIndividual IRI="#Kemnay_Skate_Park"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectHasValue>
+<ObjectProperty IRI="#is_located_in"/>
+<NamedIndividual IRI="#Kemnay"/>
+</ObjectHasValue>
+<NamedIndividual IRI="#Kemnay_Primary_School"/>
+</ClassAssertion>
+<ClassAssertion>
+<Class IRI="#primary_school"/>
+<NamedIndividual IRI="#Kemnay_Primary_School"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectHasValue>
+<ObjectProperty IRI="#is_located_in"/>
+<NamedIndividual IRI="#Kemnay"/>
+</ObjectHasValue>
+<NamedIndividual IRI="#Alehousewells_Primary_School"/>
+</ClassAssertion>
+<ClassAssertion>
+<Class IRI="#primary_school"/>
+<NamedIndividual IRI="#Alehousewells_Primary_School"/>
+</ClassAssertion>
+<ClassAssertion>
+<Class IRI="#academy_school"/>
+<NamedIndividual IRI="#Kemnay_Academy"/>
+</ClassAssertion>
+<ClassAssertion>
+<DataHasValue>
+<DataProperty IRI="#is_dated"/>
+<Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2014</Literal>
+</DataHasValue>
+<NamedIndividual IRI="#The_Kemnay_Academy_2014_extension_plan"/>
+</ClassAssertion>
+<ClassAssertion>
+<ObjectHasValue>
+<ObjectProperty IRI="#is_extending"/>
+<NamedIndividual IRI="#Kemnay_Academy"/>
+</ObjectHasValue>
+<NamedIndividual IRI="#The_Kemnay_Academy_2014_extension_plan"/>
+</ClassAssertion>
+</Ontology>
+

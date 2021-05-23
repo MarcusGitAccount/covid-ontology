@@ -1,0 +1,367 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2010/4/Ontology1273852388816.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://www.semanticweb.org/ontologies/2010/4/Ontology1273852388816.owl">
+    <Prefix name="Ontology1273848485010" IRI="http://www.semanticweb.org/ontologies/2010/4/Ontology1273848485010.owl#"/>
+    <Prefix name="example" IRI="http://example.com/"/>
+    <Prefix name="first" IRI="http://www.w3.org/2002/03owlt/imports/imports008#"/>
+    <Prefix name="xsp" IRI="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"/>
+    <Prefix name="owl11xml" IRI="http://www.w3.org/2006/12/owl11-xml#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl#"/>
+    <Prefix name="go" IRI="http://www.geneontology.org/go#"/>
+    <Prefix name="second" IRI="http://www.w3.org/2002/03owlt/imports/main008#"/>
+    <Prefix name="owl11" IRI="http://www.w3.org/2006/12/owl11#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="swrla" IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"/>
+    <Prefix name="swrlb" IRI="http://www.w3.org/2003/11/swrlb#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl2xml" IRI="http://www.w3.org/2006/12/owl2-xml#"/>
+    <Prefix name="sqwrl" IRI="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#"/>
+    <Prefix name="protege" IRI="http://protege.stanford.edu/plugins/owl/protege#"/>
+    <Prefix name="Ontology1273749840963" IRI="http://www.semanticweb.org/ontologies/2010/4/Ontology1273749840963.owl#"/>
+    <Prefix name="" IRI="http://www.semanticweb.org/ontologies/2010/4/Ontology1273852388816.owl#"/>
+    <Prefix name="pizza" IRI="http://www.co-ode.org/ontologies/pizza/pizza.owl#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="Ontology1272153806970" IRI="http://www.semanticweb.org/ontologies/2010/3/Ontology1272153806970.owl#"/>
+    <Prefix name="kunst" IRI="http://www.kunst.de/"/>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="Ontology1273848485010:Englishman"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="Ontology1273848485010:man"/>
+            <ObjectHasValue>
+                <ObjectProperty abbreviatedIRI="Ontology1273848485010:residentIn"/>
+                <NamedIndividual abbreviatedIRI="Ontology1273848485010:England"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1273848485010:Englishman"/>
+        <Class abbreviatedIRI="Ontology1273848485010:man"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1273848485010:Englishman"/>
+        <Class abbreviatedIRI="Ontology1273848485010:person"/>
+    </SubClassOf>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1273848485010:Englishman"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="Ontology1273848485010:Englishwoman"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="Ontology1273848485010:woman"/>
+            <ObjectHasValue>
+                <ObjectProperty abbreviatedIRI="Ontology1273848485010:residentIn"/>
+                <NamedIndividual abbreviatedIRI="Ontology1273848485010:England"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1273848485010:Englishwoman"/>
+        <Class abbreviatedIRI="Ontology1273848485010:person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1273848485010:Englishwoman"/>
+        <Class abbreviatedIRI="Ontology1273848485010:woman"/>
+    </SubClassOf>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1273848485010:Englishwoman"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="Ontology1273848485010:Russian"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="Ontology1273848485010:person"/>
+            <ObjectHasValue>
+                <ObjectProperty abbreviatedIRI="Ontology1273848485010:residentIn"/>
+                <NamedIndividual abbreviatedIRI="Ontology1273848485010:Russia"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1273848485010:Russian"/>
+        <Class abbreviatedIRI="Ontology1273848485010:person"/>
+    </SubClassOf>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1273848485010:Russian"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="Ontology1273848485010:author"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="Ontology1273848485010:person"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="Ontology1273848485010:authorOf"/>
+                <Class abbreviatedIRI="Ontology1273848485010:book"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1273848485010:author"/>
+        <Class abbreviatedIRI="Ontology1273848485010:person"/>
+    </SubClassOf>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1273848485010:author"/>
+    </Declaration>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1273848485010:book"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1273848485010:book"/>
+    </Declaration>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1273848485010:country"/>
+        <Class abbreviatedIRI="Ontology1273848485010:place"/>
+    </SubClassOf>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1273848485010:country"/>
+    </Declaration>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1273848485010:man"/>
+        <Class abbreviatedIRI="Ontology1273848485010:person"/>
+    </SubClassOf>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1273848485010:man"/>
+    </Declaration>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1273848485010:novel"/>
+        <Class abbreviatedIRI="Ontology1273848485010:book"/>
+    </SubClassOf>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1273848485010:novel"/>
+    </Declaration>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1273848485010:person"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1273848485010:person"/>
+    </Declaration>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1273848485010:place"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1273848485010:place"/>
+    </Declaration>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1273848485010:woman"/>
+        <Class abbreviatedIRI="Ontology1273848485010:person"/>
+    </SubClassOf>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1273848485010:woman"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="Ontology1273848485010:authorOf"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="Ontology1273848485010:regionOf"/>
+        <Class abbreviatedIRI="Ontology1273848485010:country"/>
+    </ObjectPropertyRange>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="Ontology1273848485010:regionOf"/>
+    </Declaration>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="Ontology1273848485010:residentIn"/>
+        <Class abbreviatedIRI="Ontology1273848485010:person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="Ontology1273848485010:residentIn"/>
+        <Class abbreviatedIRI="Ontology1273848485010:place"/>
+    </ObjectPropertyRange>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="Ontology1273848485010:residentIn"/>
+    </Declaration>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="Ontology1273848485010:writtenBy"/>
+        <ObjectProperty abbreviatedIRI="Ontology1273848485010:authorOf"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="Ontology1273848485010:writtenBy"/>
+        <Class abbreviatedIRI="Ontology1273848485010:book"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="Ontology1273848485010:writtenBy"/>
+        <Class abbreviatedIRI="Ontology1273848485010:person"/>
+    </ObjectPropertyRange>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="Ontology1273848485010:writtenBy"/>
+    </Declaration>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1273848485010:Englishman"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:CharlesDickens"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1273848485010:author"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:CharlesDickens"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1273848485010:man"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:CharlesDickens"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1273848485010:person"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:CharlesDickens"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:CharlesDickens"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Ontology1273848485010:authorOf"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:CharlesDickens"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:DavidCopperfield"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Ontology1273848485010:residentIn"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:CharlesDickens"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:England"/>
+    </ObjectPropertyAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1273848485010:book"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:DavidCopperfield"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1273848485010:novel"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:DavidCopperfield"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:DavidCopperfield"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Ontology1273848485010:writtenBy"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:DavidCopperfield"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:CharlesDickens"/>
+    </ObjectPropertyAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1273848485010:country"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:England"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1273848485010:place"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:England"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:England"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1273848485010:Englishwoman"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:JaneAusten"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1273848485010:author"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:JaneAusten"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1273848485010:person"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:JaneAusten"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1273848485010:woman"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:JaneAusten"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:JaneAusten"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Ontology1273848485010:authorOf"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:JaneAusten"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:PrideAndPrejudice"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Ontology1273848485010:residentIn"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:JaneAusten"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:England"/>
+    </ObjectPropertyAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1273848485010:Russian"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:LeoTolstoy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1273848485010:author"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:LeoTolstoy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1273848485010:man"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:LeoTolstoy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1273848485010:person"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:LeoTolstoy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:LeoTolstoy"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Ontology1273848485010:authorOf"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:LeoTolstoy"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:WarAndPeace"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Ontology1273848485010:residentIn"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:LeoTolstoy"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:Russia"/>
+    </ObjectPropertyAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1273848485010:book"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:PrideAndPrejudice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1273848485010:novel"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:PrideAndPrejudice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:PrideAndPrejudice"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Ontology1273848485010:writtenBy"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:PrideAndPrejudice"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:JaneAusten"/>
+    </ObjectPropertyAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1273848485010:country"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:Russia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1273848485010:place"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:Russia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:Russia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1273848485010:book"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:WarAndPeace"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1273848485010:novel"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:WarAndPeace"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:WarAndPeace"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Ontology1273848485010:writtenBy"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:WarAndPeace"/>
+        <NamedIndividual abbreviatedIRI="Ontology1273848485010:LeoTolstoy"/>
+    </ObjectPropertyAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.0.0.1253) http://owlapi.sourceforge.net -->
+

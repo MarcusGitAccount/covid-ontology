@@ -1,0 +1,16 @@
+30:annotationAssertion(annotationProperty('http://www.swatproject.org/namedIndividual'),'Iri','Literal').
+30:declaration('NamedIndividual').
+20:annotationAssertion(annotationProperty('http://www.swatproject.org/class'),'Iri','Literal').
+20:declaration('Class').
+17:classAssertion(objectHasValue('ObjectProperty','NamedIndividual'),'NamedIndividual').
+15:classAssertion('Class','NamedIndividual').
+9:annotationAssertion(annotationProperty('http://www.swatproject.org/objectProperty'),'Iri','Literal').
+9:declaration('ObjectProperty').
+4:classAssertion(objectIntersectionOf('Class',objectHasValue('ObjectProperty','NamedIndividual')),'NamedIndividual').
+3:annotationAssertion(annotationProperty('http://www.swatproject.org/dataProperty'),'Iri','Literal').
+3:classAssertion(objectSomeValuesFrom('ObjectProperty','Class'),'NamedIndividual').
+3:declaration('DataProperty').
+2:subClassOf('Class','Class').
+2:classAssertion(objectSomeValuesFrom('ObjectProperty',objectIntersectionOf('Class',objectHasValue('ObjectProperty','NamedIndividual'))),'NamedIndividual').
+2:classAssertion(dataHasValue('DataProperty','Literal'),'NamedIndividual').
+1:classAssertion(objectIntersectionOf(dataHasValue('DataProperty','Literal'),objectHasValue('ObjectProperty','NamedIndividual')),'NamedIndividual').

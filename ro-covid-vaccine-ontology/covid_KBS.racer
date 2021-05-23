@@ -6,12 +6,12 @@
 (signature :atomic-concepts (Person Male Female Gender Age-Group Child Teenager Adult Senior 
                               Disease 
                               Vaccination-Phase
-                              Job Nurse Waiter Janitor Engineer Doctor Military
+                              Job 
                               County City
                               Vaccine VaccineType SideEffect
                               Red Yellow Green Scenario
-                              Lockdown Hour-Restriction No-Restriction Restriction-Type
-                              Medical-Job Essential-Job)
+                              Scenario Restriction-Type
+                              Medical-Job Essential-Job Other-Job)
            :roles (
               (lives :domain Person :range City)
               (has-disease :domain Person :range Disease)
@@ -23,7 +23,7 @@
               (has-type :domain Vaccine :range VaccineType)
               (part-of :domain County :range city) 
               (in-scenario :domain County :range Scenario) 
-              (has-restriction :domain Scenario :range Restriction-Type)
+              (has-restriction :domain County :range Restriction-Type)
               (has-next :domain Vaccination-Phase :range Vaccination-Phase)
            )
            :attributes(
@@ -177,6 +177,13 @@
 (attribute-filler Valcea_County	12.2 has-vaccinated)
 (attribute-filler Vrancea_County	16.4 has-vaccinated)
 
+(instance Red Scenario)
+(instance Yellow Scenario)
+(instance Green Scenario)
+(instance Lockdown Restriction-Type)
+(instance Hour-Restriction Restriction-Type) 
+(instance No-Restriction Restriction-Type) 
+
 ; TODO: add has-disease roles
 (instance Diabetes Disease)
 (instance Cardiovascular Disease)
@@ -198,30 +205,36 @@
 (instance Stefana (and Female))
 
 (instance Nurse Medical-Job)
+(instance Doctor Medical-Job)
+(instance Military Essential-Job)
+(instance Student Other-Job)
+(instance Waiter Other-Job)
+(instance Janitor Other-Job)
 
-(related Marcus Engineer has-job)
+
+(related Marcus Military has-job)
 (related Rares Nurse has-job)
-(related Dennis Waiter has-job)
-(related Bogdan Janitor has-job)
+(related Dennis Student has-job)
+(related Bogdan Student has-job)
 (related Alina Nurse has-job)
 (related Ioana Waiter has-job)
 (related Ana Janitor has-job)
-(related Maria Engineer has-job)
+(related Maria Student has-job)
 (related Dragos Nurse has-job)
-(related Stefana Nurse has-job)
+(related Stefana Engineer has-job)
 
-(attribute-filler Marcus 15 has-age)
-(attribute-filler Rares 15 has-age)
+(attribute-filler Marcus 23 has-age)
+(attribute-filler Rares 23 has-age)
 (attribute-filler Dennis 15 has-age)
-(attribute-filler Bogdan 15 has-age)
-(attribute-filler Alina 15 has-age)
-(attribute-filler Ioana 15 has-age)
-(attribute-filler Ana 15 has-age)
-(attribute-filler Maria 15 has-age)
-(attribute-filler Dragos 15 has-age)
-(attribute-filler Stefana 15 has-age)
+(attribute-filler Bogdan 14 has-age)
+(attribute-filler Alina 55 has-age)
+(attribute-filler Ioana 65 has-age)
+(attribute-filler Ana 18 has-age)
+(attribute-filler Maria 6 has-age)
+(attribute-filler Dragos 19 has-age)
+(attribute-filler Stefana 42 has-age)
 
-(equivalent Job (or Essential-Job  Medical-Job))
+(equivalent Job (or Essential-Job  Medical-Job Other-Job))
 ; (equivalent Essential-Job (or Janitor Military))
 ; (equivalent Age-Group (or Child Teenager Adult Senior))
 
@@ -232,12 +245,12 @@
 ; (disjoint Nurse Waiter Janitor Engineer)
 ; (disjoint Diabetes Cardiovascular Obesity Fever Muscular-pain Nausea Fatigue)
 
-(equivalent Scenario (or Red Yellow Green))
-(equivalent Restriction-Type (or Lockdown Hour-Restriction No-Restriction))
+; (equivalent Scenario (or Red Yellow Green))
+; (equivalent Restriction-Type (or Lockdown Hour-Restriction No-Restriction))
 
 (equivalent Person (or Male Female))
 (equivalent Person (or Child Teenager Adult Senior))
-(equivalent Job (or Nurse Waiter Janitor Engineer))
+; (equivalent Job (or Nurse Waiter Janitor Engineer))
 ; (equivalent Disease (or Diabetes Cardiovascular Obesity Fever Muscular-pain Nausea Fatigue))
 ; (equivalent Vaccination-Phase (or Phase-1 Phase-2 Phase-3))
 
@@ -272,6 +285,7 @@
 ; (related Rares Phase-1 vaccinate-in-phase)
 
 ; R1
+
 (define-rule (?x Phase-1 vaccinate-in-phase)
   (or (and (?x ?z has-job) (?z Medical-Job))))
 
@@ -279,34 +293,41 @@
   (or (and (?x ?z has-job) (?z Essential-Job)) 
       (and (?x ?w has-disease) (?w Disease))))
 
+(define-rule (?x Phase-3 vaccinate-in-phase)
+  (or (and (?x ?z has-job) (?z Other-Job))))
 
 (run-all-rules)
 
-; QUESTION: Cum folosim atribute în reguli?
-; A: Nu putem, regulile permit doar tipuri și instanțe. => putem folosi grupări asemănătoare ca și la grupa de vârstă
-; (define-rule (?x ?y in-age-group) 
-;   (or (and (min ?x has-age 0) ( max ?x has-age 13) (?y Child))
-;       (and (min ?x has-age 14) ( max ?x has-age 25) (?y Teenager))
-;       (and (min ?x has-age 26) ( max ?x has-age 64) (?y Adult))
-;       (and (min ?x has-age 65) (?y Senior))))
 
-; QUESTION: FAILED
-; (define-rule (?x ?y vaccinate-with)
-;   (or (and (?x Child) (?y arn-based))
-;       (and (?x Teenager) (?y arn-based))
-;       (and (?x Adult) (?y viral-vector))
-;       (and (?x Senior) (?y arn-based))))
+(define-rule (?x Red in-scenario)  
+  (?x (and County (an has-incidence) ( > has-incidence 0.6))))
 
-; (define-rule (?x ?y in-scenario) 
-;   (or (and (min ?x has-incidence 0) ( max ?x has-incidence 3) (?y Green))
-;       (and (min ?x has-incidence 4) ( max ?x has-incidence 6) (?y Yellow))
-;       (and (min ?x has-incidence 7) (?y Red))))
+(define-rule (?x Yellow in-scenario)  
+  (?x (and County (an has-incidence) ( > has-incidence 0.4) (<= has-incidence 0.6))))
 
-; QUESTION: FAILED
-; (define-rule (?x ?y has-restriction)
-;   (or (and (?x Red) (?y Lockdown))
-;       (and (?x Yellow) (?y Hour-Restriction))
-;       (and (?x Green) (?y No-Restriction))))
+(define-rule (?x Green in-scenario)  
+  (?x (and County (an has-incidence) ( <= has-incidence 0.4))))
+
+(run-all-rules)
+
+(define-rule (?x Lockdown has-restriction) 
+  (and (?x Red in-scenario)))
+
+(define-rule (?x Hour-Restriction has-restriction) 
+  (and (?x Yellow in-scenario) ))
+
+(define-rule (?x No-Restriction has-restriction) 
+  (and (?x Green in-scenario) ))
+
+(run-all-rules)
+
+(define-rule (?x arn-based vaccinate-with) 
+  (or (?x Child) (?x Teenager) (?x Senior) ))
+
+(define-rule (?x viral-vector vaccinate-with) 
+  (or (?x Adult)) )
+
+(run-all-rules)
 
 
 ; Q1 : Câte tipuri de vaccin sunt disponibile?
@@ -339,3 +360,4 @@
 (concept-instances County)
 ; QUESTION: De ce nu avem nicio instanță de Teenager când toate instanțele de persoane au 15 ani?
 (concept-instances Teenager)
+(all-role-assertions)

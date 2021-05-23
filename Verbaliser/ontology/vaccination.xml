@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:owl2="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+   xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+   xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
+   <owl:Ontology rdf:about=""/>
+   <owl:ObjectProperty rdf:about="LIVES">
+      <rdfs:domain>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="PERSON"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdfs:domain>
+      <rdfs:range>
+         <owl:Class rdf:about="CITY"/>
+      </rdfs:range>
+   </owl:ObjectProperty>
+   <owl:ObjectProperty rdf:about="PART-OF">
+      <rdfs:domain>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="COUNTY"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdfs:domain>
+      <rdfs:range>
+         <owl:Class rdf:about="CITY"/>
+      </rdfs:range>
+   </owl:ObjectProperty>
+   <owl:ObjectProperty rdf:about="HAS-TYPE">
+      <rdfs:domain>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="VACCINE"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdfs:domain>
+      <rdfs:range>
+         <owl:Class rdf:about="VACCINETYPE"/>
+      </rdfs:range>
+   </owl:ObjectProperty>
+   <owl:DatatypeProperty rdf:about="HAS-AGE">
+      <rdfs:range resource="http://www.w3.org/2001/XMLSchema#int"/>
+   </owl:DatatypeProperty>
+   <owl:ObjectProperty rdf:about="HAS-SIDE-EFFECT">
+      <rdfs:domain>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="VACCINE"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdfs:domain>
+      <rdfs:range>
+         <owl:Class rdf:about="SIDEEFFECT"/>
+      </rdfs:range>
+   </owl:ObjectProperty>
+   <owl:DatatypeProperty rdf:about="HAS-CASES">
+      <rdfs:range resource="http://www.w3.org/2001/XMLSchema#int"/>
+   </owl:DatatypeProperty>
+   <owl:ObjectProperty rdf:about="VACCINATE-WITH">
+      <rdfs:domain>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="PERSON"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdfs:domain>
+      <rdfs:range>
+         <owl:Class rdf:about="VACCINETYPE"/>
+      </rdfs:range>
+   </owl:ObjectProperty>
+   <owl:DatatypeProperty rdf:about="HAS-VACCINATED">
+      <rdfs:range resource="http://www.w3.org/2001/XMLSchema#float"/>
+   </owl:DatatypeProperty>
+   <owl:ObjectProperty rdf:about="IN-AGE-GROUP">
+      <rdfs:domain>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="PERSON"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdfs:domain>
+      <rdfs:range>
+         <owl:Class rdf:about="AGE-GROUP"/>
+      </rdfs:range>
+   </owl:ObjectProperty>
+   <owl:DatatypeProperty rdf:about="HAS-INCIDENCE">
+      <rdfs:range resource="http://www.w3.org/2001/XMLSchema#float"/>
+   </owl:DatatypeProperty>
+   <owl:ObjectProperty rdf:about="VACCINATE-IN-PHASE">
+      <rdfs:domain>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="PERSON"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdfs:domain>
+      <rdfs:range>
+         <owl:Class rdf:about="VACCINATION-PHASE"/>
+      </rdfs:range>
+   </owl:ObjectProperty>
+   <owl:DatatypeProperty rdf:about="HAS-POP">
+      <rdfs:range resource="http://www.w3.org/2001/XMLSchema#int"/>
+   </owl:DatatypeProperty>
+   <owl:ObjectProperty rdf:about="HAS-NEXT">
+      <rdfs:domain>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="VACCINATION-PHASE"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdfs:domain>
+      <rdfs:range>
+         <owl:Class rdf:about="VACCINATION-PHASE"/>
+      </rdfs:range>
+   </owl:ObjectProperty>
+   <owl:ObjectProperty rdf:about="HAS-JOB">
+      <rdfs:domain>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="PERSON"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdfs:domain>
+      <rdfs:range>
+         <owl:Class rdf:about="JOB"/>
+      </rdfs:range>
+   </owl:ObjectProperty>
+   <owl:ObjectProperty rdf:about="HAS-RESTRICTION">
+      <rdfs:domain>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="COUNTY"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdfs:domain>
+      <rdfs:range>
+         <owl:Class rdf:about="RESTRICTION-TYPE"/>
+      </rdfs:range>
+   </owl:ObjectProperty>
+   <owl:ObjectProperty rdf:about="HAS-DISEASE">
+      <rdfs:domain>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="PERSON"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdfs:domain>
+      <rdfs:range>
+         <owl:Class rdf:about="DISEASE"/>
+      </rdfs:range>
+   </owl:ObjectProperty>
+   <owl:ObjectProperty rdf:about="IN-SCENARIO">
+      <rdfs:domain>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="COUNTY"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdfs:domain>
+      <rdfs:range>
+         <owl:Class rdf:about="SCENARIO"/>
+      </rdfs:range>
+   </owl:ObjectProperty>
+   <owl:Class rdf:about="FEMALE">
+      <owl:disjointWith>
+         <owl:Class rdf:about="MALE"/>
+      </owl:disjointWith>
+   </owl:Class>
+   <owl:Class rdf:about="SENIOR">
+      <owl:disjointWith>
+         <owl:Class rdf:about="ADULT"/>
+      </owl:disjointWith>
+   </owl:Class>
+   <owl:Class rdf:about="SENIOR">
+      <owl:disjointWith>
+         <owl:Class rdf:about="TEENAGER"/>
+      </owl:disjointWith>
+   </owl:Class>
+   <owl:Class rdf:about="SENIOR">
+      <owl:disjointWith>
+         <owl:Class rdf:about="CHILD"/>
+      </owl:disjointWith>
+   </owl:Class>
+   <owl:Class rdf:about="ADULT">
+      <owl:disjointWith>
+         <owl:Class rdf:about="TEENAGER"/>
+      </owl:disjointWith>
+   </owl:Class>
+   <owl:Class rdf:about="ADULT">
+      <owl:disjointWith>
+         <owl:Class rdf:about="CHILD"/>
+      </owl:disjointWith>
+   </owl:Class>
+   <owl:Class rdf:about="TEENAGER">
+      <owl:disjointWith>
+         <owl:Class rdf:about="CHILD"/>
+      </owl:disjointWith>
+   </owl:Class>
+   <owl:Class rdf:about="JOB">
+      <owl:equivalentClass>
+         <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="ESSENTIAL-JOB"/>
+               <owl:Class rdf:about="MEDICAL-JOB"/>
+               <owl:Class rdf:about="OTHER-JOB"/>
+            </owl:unionOf>
+         </owl:Class>
+      </owl:equivalentClass>
+   </owl:Class>
+   <owl:Class rdf:about="PERSON">
+      <owl:equivalentClass>
+         <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="MALE"/>
+               <owl:Class rdf:about="FEMALE"/>
+            </owl:unionOf>
+         </owl:Class>
+      </owl:equivalentClass>
+   </owl:Class>
+   <owl:Class rdf:about="PERSON">
+      <owl:equivalentClass>
+         <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="CHILD"/>
+               <owl:Class rdf:about="TEENAGER"/>
+               <owl:Class rdf:about="ADULT"/>
+               <owl:Class rdf:about="SENIOR"/>
+            </owl:unionOf>
+         </owl:Class>
+      </owl:equivalentClass>
+   </owl:Class>
+   <owl:Class rdf:about="CHILD">
+      <owl:equivalentClass>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="PERSON"/>
+               <owl:Restriction>
+                  <owl:onProperty rdf:resource="HAS-AGE"/>
+                  <owl:someValuesFrom>
+                     <xsd:simpleType>
+                        <xsd:restriction xsd:base="http://www.w3.org/2001/XMLSchema#int">
+                           <xsd:maxInclusive xsd:value="12"/>
+                        </xsd:restriction>
+                     </xsd:simpleType>
+                  </owl:someValuesFrom>
+               </owl:Restriction>
+            </owl:intersectionOf>
+         </owl:Class>
+      </owl:equivalentClass>
+   </owl:Class>
+   <owl:Class rdf:about="TEENAGER">
+      <owl:equivalentClass>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="PERSON"/>
+               <owl:Restriction>
+                  <owl:onProperty rdf:resource="HAS-AGE"/>
+                  <owl:someValuesFrom>
+                     <xsd:simpleType>
+                        <xsd:restriction xsd:base="http://www.w3.org/2001/XMLSchema#int">
+                           <xsd:minInclusive xsd:value="13"/>
+                        </xsd:restriction>
+                     </xsd:simpleType>
+                  </owl:someValuesFrom>
+               </owl:Restriction>
+               <owl:Restriction>
+                  <owl:onProperty rdf:resource="HAS-AGE"/>
+                  <owl:someValuesFrom>
+                     <xsd:simpleType>
+                        <xsd:restriction xsd:base="http://www.w3.org/2001/XMLSchema#int">
+                           <xsd:maxInclusive xsd:value="19"/>
+                        </xsd:restriction>
+                     </xsd:simpleType>
+                  </owl:someValuesFrom>
+               </owl:Restriction>
+            </owl:intersectionOf>
+         </owl:Class>
+      </owl:equivalentClass>
+   </owl:Class>
+   <owl:Class rdf:about="ADULT">
+      <owl:equivalentClass>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="PERSON"/>
+               <owl:Restriction>
+                  <owl:onProperty rdf:resource="HAS-AGE"/>
+                  <owl:someValuesFrom>
+                     <xsd:simpleType>
+                        <xsd:restriction xsd:base="http://www.w3.org/2001/XMLSchema#int">
+                           <xsd:minInclusive xsd:value="20"/>
+                        </xsd:restriction>
+                     </xsd:simpleType>
+                  </owl:someValuesFrom>
+               </owl:Restriction>
+               <owl:Restriction>
+                  <owl:onProperty rdf:resource="HAS-AGE"/>
+                  <owl:someValuesFrom>
+                     <xsd:simpleType>
+                        <xsd:restriction xsd:base="http://www.w3.org/2001/XMLSchema#int">
+                           <xsd:maxInclusive xsd:value="64"/>
+                        </xsd:restriction>
+                     </xsd:simpleType>
+                  </owl:someValuesFrom>
+               </owl:Restriction>
+            </owl:intersectionOf>
+         </owl:Class>
+      </owl:equivalentClass>
+   </owl:Class>
+   <owl:Class rdf:about="SENIOR">
+      <owl:equivalentClass>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="PERSON"/>
+               <owl:Restriction>
+                  <owl:onProperty rdf:resource="HAS-AGE"/>
+                  <owl:someValuesFrom>
+                     <xsd:simpleType>
+                        <xsd:restriction xsd:base="http://www.w3.org/2001/XMLSchema#int">
+                           <xsd:minInclusive xsd:value="65"/>
+                        </xsd:restriction>
+                     </xsd:simpleType>
+                  </owl:someValuesFrom>
+               </owl:Restriction>
+            </owl:intersectionOf>
+         </owl:Class>
+      </owl:equivalentClass>
+   </owl:Class>
+   <owl:Class rdf:about="FEMALE">
+      <rdfs:subClassOf>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class>
+                  <owl:complementOf>
+                     <owl:Class rdf:about="MALE"/>
+                  </owl:complementOf>
+               </owl:Class>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="SENIOR">
+      <rdfs:subClassOf>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class>
+                  <owl:complementOf>
+                     <owl:Class rdf:about="ADULT"/>
+                  </owl:complementOf>
+               </owl:Class>
+               <owl:Class>
+                  <owl:complementOf>
+                     <owl:Class rdf:about="TEENAGER"/>
+                  </owl:complementOf>
+               </owl:Class>
+               <owl:Class>
+                  <owl:complementOf>
+                     <owl:Class rdf:about="CHILD"/>
+                  </owl:complementOf>
+               </owl:Class>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="ADULT">
+      <rdfs:subClassOf>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class>
+                  <owl:complementOf>
+                     <owl:Class rdf:about="TEENAGER"/>
+                  </owl:complementOf>
+               </owl:Class>
+               <owl:Class>
+                  <owl:complementOf>
+                     <owl:Class rdf:about="CHILD"/>
+                  </owl:complementOf>
+               </owl:Class>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="TEENAGER">
+      <rdfs:subClassOf>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class>
+                  <owl:complementOf>
+                     <owl:Class rdf:about="CHILD"/>
+                  </owl:complementOf>
+               </owl:Class>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Thing rdf:about="MARIA">
+      <rdf:type>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="FEMALE"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdf:type>
+      <VACCINATE-WITH rdf:resource="ARN-BASED"/>
+      <VACCINATE-IN-PHASE rdf:resource="PHASE-3"/>
+      <HAS-JOB rdf:resource="STUDENT"/>
+   </owl:Thing>
+   <VACCINETYPE rdf:about="ARN-BASED">
+   </VACCINETYPE>
+   <owl:Thing rdf:about="DRAGOS">
+      <rdf:type>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="MALE"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdf:type>
+      <VACCINATE-WITH rdf:resource="ARN-BASED"/>
+      <VACCINATE-IN-PHASE rdf:resource="PHASE-1"/>
+      <HAS-JOB rdf:resource="NURSE"/>
+   </owl:Thing>
+   <owl:Thing rdf:about="DENNIS">
+      <rdf:type>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="MALE"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdf:type>
+      <VACCINATE-WITH rdf:resource="ARN-BASED"/>
+      <VACCINATE-IN-PHASE rdf:resource="PHASE-3"/>
+      <HAS-JOB rdf:resource="STUDENT"/>
+   </owl:Thing>
+   <owl:Thing rdf:about="BOGDAN">
+      <rdf:type>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="MALE"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdf:type>
+      <VACCINATE-WITH rdf:resource="ARN-BASED"/>
+      <VACCINATE-IN-PHASE rdf:resource="PHASE-3"/>
+      <HAS-JOB rdf:resource="STUDENT"/>
+   </owl:Thing>
+   <owl:Thing rdf:about="ANA">
+      <rdf:type>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="FEMALE"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdf:type>
+      <VACCINATE-WITH rdf:resource="ARN-BASED"/>
+      <VACCINATE-IN-PHASE rdf:resource="PHASE-3"/>
+      <HAS-JOB rdf:resource="JANITOR"/>
+   </owl:Thing>
+   <owl:Thing rdf:about="IOANA">
+      <rdf:type>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="FEMALE"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdf:type>
+      <VACCINATE-WITH rdf:resource="ARN-BASED"/>
+      <VACCINATE-IN-PHASE rdf:resource="PHASE-3"/>
+      <HAS-JOB rdf:resource="WAITER"/>
+   </owl:Thing>
+   <owl:Thing rdf:about="STEFANA">
+      <rdf:type>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="FEMALE"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdf:type>
+      <VACCINATE-WITH rdf:resource="VIRAL-VECTOR"/>
+      <HAS-JOB rdf:resource="ENGINEER"/>
+   </owl:Thing>
+   <VACCINETYPE rdf:about="VIRAL-VECTOR">
+   </VACCINETYPE>
+   <owl:Thing rdf:about="RARES">
+      <rdf:type>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="MALE"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdf:type>
+      <VACCINATE-WITH rdf:resource="VIRAL-VECTOR"/>
+      <VACCINATE-IN-PHASE rdf:resource="PHASE-1"/>
+      <HAS-JOB rdf:resource="NURSE"/>
+   </owl:Thing>
+   <owl:Thing rdf:about="MARCUS">
+      <rdf:type>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="MALE"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdf:type>
+      <VACCINATE-WITH rdf:resource="VIRAL-VECTOR"/>
+      <VACCINATE-IN-PHASE rdf:resource="PHASE-2"/>
+      <HAS-JOB rdf:resource="MILITARY"/>
+   </owl:Thing>
+   <owl:Thing rdf:about="ALINA">
+      <rdf:type>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="FEMALE"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdf:type>
+      <VACCINATE-WITH rdf:resource="VIRAL-VECTOR"/>
+      <VACCINATE-IN-PHASE rdf:resource="PHASE-1"/>
+      <HAS-JOB rdf:resource="NURSE"/>
+   </owl:Thing>
+   <COUNTY rdf:about="SIBIU_COUNTY">
+      <HAS-RESTRICTION rdf:resource="LOCKDOWN"/>
+      <IN-SCENARIO rdf:resource="RED"/>
+   </COUNTY>
+   <RESTRICTION-TYPE rdf:about="LOCKDOWN">
+   </RESTRICTION-TYPE>
+   <COUNTY rdf:about="SALAJ_COUNTY">
+      <HAS-RESTRICTION rdf:resource="LOCKDOWN"/>
+      <IN-SCENARIO rdf:resource="RED"/>
+   </COUNTY>
+   <COUNTY rdf:about="PRAHOVA_COUNTY">
+      <HAS-RESTRICTION rdf:resource="LOCKDOWN"/>
+      <IN-SCENARIO rdf:resource="RED"/>
+   </COUNTY>
+   <COUNTY rdf:about="MURES_COUNTY">
+      <HAS-RESTRICTION rdf:resource="LOCKDOWN"/>
+      <IN-SCENARIO rdf:resource="RED"/>
+   </COUNTY>
+   <COUNTY rdf:about="MEHEDINTI_COUNTY">
+      <HAS-RESTRICTION rdf:resource="LOCKDOWN"/>
+      <IN-SCENARIO rdf:resource="RED"/>
+   </COUNTY>
+   <COUNTY rdf:about="ILFOV_COUNTY">
+      <HAS-RESTRICTION rdf:resource="LOCKDOWN"/>
+      <IN-SCENARIO rdf:resource="RED"/>
+   </COUNTY>
+   <COUNTY rdf:about="HUNEDOARA_COUNTY">
+      <HAS-RESTRICTION rdf:resource="LOCKDOWN"/>
+      <IN-SCENARIO rdf:resource="RED"/>
+   </COUNTY>
+   <COUNTY rdf:about="HARGHITA_COUNTY">
+      <HAS-RESTRICTION rdf:resource="LOCKDOWN"/>
+      <IN-SCENARIO rdf:resource="RED"/>
+   </COUNTY>
+   <COUNTY rdf:about="COVASNA_COUNTY">
+      <HAS-RESTRICTION rdf:resource="LOCKDOWN"/>
+      <IN-SCENARIO rdf:resource="RED"/>
+   </COUNTY>
+   <COUNTY rdf:about="CLUJ_COUNTY">
+      <HAS-RESTRICTION rdf:resource="LOCKDOWN"/>
+      <IN-SCENARIO rdf:resource="RED"/>
+   </COUNTY>
+   <COUNTY rdf:about="CALARASI_COUNTY">
+      <HAS-RESTRICTION rdf:resource="HOUR-RESTRICTION"/>
+      <IN-SCENARIO rdf:resource="YELLOW"/>
+   </COUNTY>
+   <RESTRICTION-TYPE rdf:about="HOUR-RESTRICTION">
+   </RESTRICTION-TYPE>
+   <COUNTY rdf:about="CONSTANTA_COUNTY">
+      <HAS-RESTRICTION rdf:resource="HOUR-RESTRICTION"/>
+      <IN-SCENARIO rdf:resource="YELLOW"/>
+   </COUNTY>
+   <COUNTY rdf:about="IASI_COUNTY">
+      <HAS-RESTRICTION rdf:resource="HOUR-RESTRICTION"/>
+      <IN-SCENARIO rdf:resource="YELLOW"/>
+   </COUNTY>
+   <COUNTY rdf:about="NEAMT_COUNTY">
+      <HAS-RESTRICTION rdf:resource="HOUR-RESTRICTION"/>
+      <IN-SCENARIO rdf:resource="YELLOW"/>
+   </COUNTY>
+   <COUNTY rdf:about="OLT_COUNTY">
+      <HAS-RESTRICTION rdf:resource="HOUR-RESTRICTION"/>
+      <IN-SCENARIO rdf:resource="YELLOW"/>
+   </COUNTY>
+   <COUNTY rdf:about="TELEORMAN_COUNTY">
+      <HAS-RESTRICTION rdf:resource="HOUR-RESTRICTION"/>
+      <IN-SCENARIO rdf:resource="YELLOW"/>
+   </COUNTY>
+   <COUNTY rdf:about="TULCEA_COUNTY">
+      <HAS-RESTRICTION rdf:resource="HOUR-RESTRICTION"/>
+      <IN-SCENARIO rdf:resource="YELLOW"/>
+   </COUNTY>
+   <COUNTY rdf:about="VALCEA_COUNTY">
+      <HAS-RESTRICTION rdf:resource="HOUR-RESTRICTION"/>
+      <IN-SCENARIO rdf:resource="YELLOW"/>
+   </COUNTY>
+   <COUNTY rdf:about="VRANCEA_COUNTY">
+      <HAS-RESTRICTION rdf:resource="HOUR-RESTRICTION"/>
+      <IN-SCENARIO rdf:resource="YELLOW"/>
+   </COUNTY>
+   <COUNTY rdf:about="VASLUI_COUNTY">
+      <HAS-RESTRICTION rdf:resource="NO-RESTRICTION"/>
+      <IN-SCENARIO rdf:resource="GREEN"/>
+   </COUNTY>
+   <RESTRICTION-TYPE rdf:about="NO-RESTRICTION">
+   </RESTRICTION-TYPE>
+   <COUNTY rdf:about="SUCEAVA_COUNTY">
+      <HAS-RESTRICTION rdf:resource="NO-RESTRICTION"/>
+      <IN-SCENARIO rdf:resource="GREEN"/>
+   </COUNTY>
+   <COUNTY rdf:about="SATU_MARE_COUNTY">
+      <HAS-RESTRICTION rdf:resource="NO-RESTRICTION"/>
+      <IN-SCENARIO rdf:resource="GREEN"/>
+   </COUNTY>
+   <COUNTY rdf:about="MARAMURES_COUNTY">
+      <HAS-RESTRICTION rdf:resource="NO-RESTRICTION"/>
+      <IN-SCENARIO rdf:resource="GREEN"/>
+   </COUNTY>
+   <COUNTY rdf:about="IALOMITA_COUNTY">
+      <HAS-RESTRICTION rdf:resource="NO-RESTRICTION"/>
+      <IN-SCENARIO rdf:resource="GREEN"/>
+   </COUNTY>
+   <SCENARIO rdf:about="RED">
+   </SCENARIO>
+   <SCENARIO rdf:about="YELLOW">
+   </SCENARIO>
+   <SCENARIO rdf:about="GREEN">
+   </SCENARIO>
+   <VACCINATION-PHASE rdf:about="PHASE-1">
+      <HAS-NEXT rdf:resource="PHASE-2"/>
+   </VACCINATION-PHASE>
+   <VACCINATION-PHASE rdf:about="PHASE-2">
+      <HAS-NEXT rdf:resource="PHASE-3"/>
+   </VACCINATION-PHASE>
+   <VACCINATION-PHASE rdf:about="PHASE-3">
+   </VACCINATION-PHASE>
+   <owl:Thing rdf:about="AZ">
+      <HAS-SIDE-EFFECT rdf:resource="BLOOD-CLOT"/>
+      <HAS-TYPE rdf:resource="VIRAL-VECTOR"/>
+   </owl:Thing>
+   <SIDEEFFECT rdf:about="BLOOD-CLOT">
+   </SIDEEFFECT>
+   <owl:Thing rdf:about="PFIZER">
+      <HAS-TYPE rdf:resource="ARN-BASED"/>
+   </owl:Thing>
+   <MEDICAL-JOB rdf:about="NURSE">
+   </MEDICAL-JOB>
+   <OTHER-JOB rdf:about="STUDENT">
+   </OTHER-JOB>
+   <OTHER-JOB rdf:about="JANITOR">
+   </OTHER-JOB>
+   <OTHER-JOB rdf:about="WAITER">
+   </OTHER-JOB>
+   <ESSENTIAL-JOB rdf:about="MILITARY">
+   </ESSENTIAL-JOB>
+   <MEDICAL-JOB rdf:about="DOCTOR">
+   </MEDICAL-JOB>
+   <DISEASE rdf:about="FATIGUE">
+   </DISEASE>
+   <DISEASE rdf:about="NAUSEA">
+   </DISEASE>
+   <DISEASE rdf:about="MUSCULAR-PAIN">
+   </DISEASE>
+   <DISEASE rdf:about="FEVER">
+   </DISEASE>
+   <DISEASE rdf:about="OBESITY">
+   </DISEASE>
+   <DISEASE rdf:about="CARDIOVASCULAR">
+   </DISEASE>
+   <DISEASE rdf:about="DIABETES">
+   </DISEASE>
+</rdf:RDF>

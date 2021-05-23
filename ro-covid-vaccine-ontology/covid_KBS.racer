@@ -7,13 +7,13 @@
                               Disease 
                               Vaccination-Phase
                               Job 
-                              County City
+                              County
                               Vaccine VaccineType SideEffect
                               Red Yellow Green Scenario
                               Scenario Restriction-Type
                               Medical-Job Essential-Job Other-Job)
            :roles (
-              (lives :domain Person :range City)
+              (lives :domain Person :range County)
               (has-disease :domain Person :range Disease)
               (has-job :domain Person :range Job)
               (vaccinate-in-phase :domain Person :range Vaccination-Phase)
@@ -21,7 +21,6 @@
               (vaccinate-with :domain Person :range VaccineType)
               (has-side-effect :domain Vaccine :range SideEffect)
               (has-type :domain Vaccine :range VaccineType)
-              (part-of :domain County :range city) 
               (in-scenario :domain County :range Scenario) 
               (has-restriction :domain County :range Restriction-Type)
               (has-next :domain Vaccination-Phase :range Vaccination-Phase)
@@ -35,11 +34,7 @@
             )
 )
 
-; (define-concrete-domain-attribute has-pop :domain County :type integer)
-; (define-concrete-domain-attribute has-incidence :domain County :type integer)
-; (define-concrete-domain-attribute has-cases :domain County :type integer)
-; (define-concrete-domain-attribute has-age :domain Person :type integer)
-
+; County Instances - Populated With Parser
 (instance  Vaslui_County County)
 (instance  Cluj_County County)
 (instance  Olt_County County)
@@ -78,6 +73,7 @@
 ;         FILTER(?type = dbr:Counties_of_Romania)
 ;       }
 
+; Attributes filled using the parser
 (attribute-filler Vaslui_County	395500 has-pop)
 (attribute-filler Cluj_County	691106 has-pop)
 (attribute-filler Olt_County	415530 has-pop)
@@ -177,6 +173,7 @@
 (attribute-filler Valcea_County	12.2 has-vaccinated)
 (attribute-filler Vrancea_County	16.4 has-vaccinated)
 
+; Instances for the Scenarios and Restrictions
 (instance Red Scenario)
 (instance Yellow Scenario)
 (instance Green Scenario)
@@ -184,7 +181,7 @@
 (instance Hour-Restriction Restriction-Type) 
 (instance No-Restriction Restriction-Type) 
 
-; TODO: add has-disease roles
+; Diseases instances
 (instance Diabetes Disease)
 (instance Cardiovascular Disease)
 (instance Obesity Disease)
@@ -193,6 +190,7 @@
 (instance Nausea Disease) 
 (instance Fatigue Disease) 
 
+; Persons instances
 (instance Marcus (and Male))
 (instance Rares (and Male))
 (instance Dennis (and Male))
@@ -203,15 +201,21 @@
 (instance Maria (and Female))
 (instance Dragos (and Male))
 (instance Stefana (and Female))
+(instance Loredana (and Female))
+(instance Silviu (and Male))
+(instance Razvan (and Male))
+(instance Alexandru (and Male))
 
+;Jobs instances
 (instance Nurse Medical-Job)
 (instance Doctor Medical-Job)
 (instance Military Essential-Job)
+(instance Government-Official Essential-Job)
 (instance Student Other-Job)
 (instance Waiter Other-Job)
 (instance Janitor Other-Job)
 
-
+;Job assignation for each individual
 (related Marcus Military has-job)
 (related Rares Nurse has-job)
 (related Dennis Student has-job)
@@ -222,7 +226,28 @@
 (related Maria Student has-job)
 (related Dragos Nurse has-job)
 (related Stefana Engineer has-job)
+(related Loredana Government-Official has-job)
+(related Silviu Student has-job)
+(related Razvan Janitor has-job)
+(related Alexandru Engineer has-job)
 
+;Location assignation for each individual
+(related Marcus Cluj_County lives)
+(related Rares Sibiu_County lives)
+(related Dennis Sibiu_County lives)
+(related Bogdan Cluj_County lives)
+(related Alina Hunedoara_County lives)
+(related Ioana Teleorman_County lives)
+(related Ana Covasna_County lives)
+(related Maria Harghita_County lives)
+(related Dragos Iasi_County lives)
+(related Stefana Tulcea_County lives)
+(related Loredana Olt_County lives)
+(related Silviu Suceava_County lives)
+(related Razvan Mures_County lives)
+(related Alexandru Calarasi_County lives)
+
+;Age filler for each individual
 (attribute-filler Marcus 23 has-age)
 (attribute-filler Rares 23 has-age)
 (attribute-filler Dennis 15 has-age)
@@ -233,97 +258,104 @@
 (attribute-filler Maria 6 has-age)
 (attribute-filler Dragos 19 has-age)
 (attribute-filler Stefana 42 has-age)
+(attribute-filler Loredana 60 has-age)
+(attribute-filler Silviu 20 has-age)
+(attribute-filler Razvan 45 has-age)
+(attribute-filler Alexandru 55 has-age)
 
+;3 individuals have diseases
+(related Silviu Obesity has-disease)
+(related Razvan Diabetes has-disease)
+(related Alexandru Diabetes has-disease)
+
+; Job is equivalent with the union of those sets
 (equivalent Job (or Essential-Job  Medical-Job Other-Job))
-; (equivalent Essential-Job (or Janitor Military))
-; (equivalent Age-Group (or Child Teenager Adult Senior))
+
 
 ; Partition design pattern
 (disjoint Male Female)
 (disjoint Child Teenager Adult Senior)
-; (disjoint Phase-1 Phase-2 Phase-3)
-; (disjoint Nurse Waiter Janitor Engineer)
-; (disjoint Diabetes Cardiovascular Obesity Fever Muscular-pain Nausea Fatigue)
 
-; (equivalent Scenario (or Red Yellow Green))
-; (equivalent Restriction-Type (or Lockdown Hour-Restriction No-Restriction))
-
+; Constituency Design Pattern http://ontologydesignpatterns.org/wiki/Submissions:Constituency
 (equivalent Person (or Male Female))
 (equivalent Person (or Child Teenager Adult Senior))
-; (equivalent Job (or Nurse Waiter Janitor Engineer))
-; (equivalent Disease (or Diabetes Cardiovascular Obesity Fever Muscular-pain Nausea Fatigue))
-; (equivalent Vaccination-Phase (or Phase-1 Phase-2 Phase-3))
 
+; Criterion Design Pattern http://ontologydesignpatterns.org/wiki/Submissions:Criterion
 (equivalent Child (and Person (max has-age 12)))
 (equivalent Teenager (and Person (min has-age 13) (max has-age 19)))
 (equivalent Adult (and Person (min has-age 20) (max has-age 64)))
 (equivalent Senior (and Person (min has-age 65)))
 
+; Vaccination Pahses
 (instance Phase-1 Vaccination-Phase)
 (instance Phase-2 Vaccination-Phase)
 (instance Phase-3 Vaccination-Phase)
 
+; Sequence of Phases
 (related Phase-1 Phase-2 has-next)
 (related Phase-2 Phase-3 has-next)
 
+; Vaccine types instances
 (instance arn-based VaccineType)	
 (instance viral-vector VaccineType)	
+
+; AZ side effect
 (instance blood-clot SideEffect)	
+
+; Type and side effect instantiation
 (related pfizer arn-based has-type)	
 (related az viral-vector has-type)	
 (related az blood-clot has-side-effect)
 
-; TODO: Refolosire design patern în alt loc
-; Content ODP(Part of)
-; (implies Phase-1 Phase-2)
-; dacă te poți vaccina în faza 2 <=> te poți vaccina și în faza 3
-; (implies Phase-2 Phase-3)
 
-; has-next phases
-
-
-; (related Rares Phase-1 vaccinate-in-phase)
-
-; R1
-
-(define-rule (?x Phase-1 vaccinate-in-phase)
-  (or (and (?x ?z has-job) (?z Medical-Job))))
-
-(define-rule (?x Phase-2 vaccinate-in-phase)
-  (or (and (?x ?z has-job) (?z Essential-Job)) 
-      (and (?x ?w has-disease) (?w Disease))))
-
+; SWRL RULES 
+; Rule 1: People having nonesential jobs get the vaccine jab in Phase-3
 (define-rule (?x Phase-3 vaccinate-in-phase)
-  (or (and (?x ?z has-job) (?z Other-Job))))
+  (and (?x ?z has-job) (?z Other-Job)))
 
+;Rule 2: People having esential jobs and diseases get the vaccine in Phase-2
+(define-rule (?x Phase-2 vaccinate-in-phase)
+ (and (?x Person) 
+      (or (and (?x ?z has-job) (?z Essential-Job)) (and (?x ?w has-disease) (?w Disease)))))
+
+;Rule 3: People having medical jobs get the vaccine in Phase-1
+(define-rule (?x Phase-1 vaccinate-in-phase)
+  (and (?x Person) (?x ?z has-job) (?z Medical-Job)))
 (run-all-rules)
 
-
+;Rule 4: If a county has an incidence bigger than .6 then it is in the Red scenario
 (define-rule (?x Red in-scenario)  
   (?x (and County (an has-incidence) ( > has-incidence 0.6))))
 
+;Rule 5: incidence in interval (0.4, 0.6] -> Yellow
 (define-rule (?x Yellow in-scenario)  
   (?x (and County (an has-incidence) ( > has-incidence 0.4) (<= has-incidence 0.6))))
 
+;Rule 6: incidence smaller than 0.4 -> Green Scenario
 (define-rule (?x Green in-scenario)  
   (?x (and County (an has-incidence) ( <= has-incidence 0.4))))
 
 (run-all-rules)
 
+; Rule 7: Counties in RED scenario are in lockdown
 (define-rule (?x Lockdown has-restriction) 
   (and (?x Red in-scenario)))
 
+; Rule 8: Counties in Yellow scenario only have hour restricitions
 (define-rule (?x Hour-Restriction has-restriction) 
   (and (?x Yellow in-scenario) ))
 
+; Rule 9: Counties in Green scenario dont have restrictions
 (define-rule (?x No-Restriction has-restriction) 
   (and (?x Green in-scenario) ))
 
 (run-all-rules)
 
+; Rule 10: Childs, Teenagers and Senior should be vaccinated with arn-based vaccines
 (define-rule (?x arn-based vaccinate-with) 
   (or (?x Child) (?x Teenager) (?x Senior) ))
 
+; Rule 11: Adults should be vaccinated with viral-vector vaccines
 (define-rule (?x viral-vector vaccinate-with) 
   (or (?x Adult)) )
 

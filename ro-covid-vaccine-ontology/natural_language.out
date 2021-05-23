@@ -1,0 +1,421 @@
+Every ADULT is a PERSON that HAS-AGE an Error95 and that HAS-AGE an Error96.
+Every PERSON that HAS-AGE an Error95 and that HAS-AGE an Error96 is an ADULT.
+
+Every CHILD is a PERSON that HAS-AGE an Error91.
+Every PERSON that HAS-AGE an Error91 is a CHILD.
+
+Every JOB is something that is an ESSENTIAL-JOB or that is a MEDICAL-JOB or that is an OTHER-JOB.
+Everything that is an ESSENTIAL-JOB or that is a MEDICAL-JOB or that is an OTHER-JOB is a JOB.
+
+Every PERSON is something that is an ADULT or that is a CHILD or that is a SENIOR or that is a TEENAGER.
+Everything that is an ADULT or that is a CHILD or that is a SENIOR or that is a TEENAGER is a PERSON.
+
+Every PERSON is something that is a FEMALE or that is a MALE.
+Everything that is a FEMALE or that is a MALE is a PERSON.
+
+Every SENIOR is a PERSON that HAS-AGE an Error92.
+Every PERSON that HAS-AGE an Error92 is a SENIOR.
+
+Every TEENAGER is a PERSON that HAS-AGE an Error93 and that HAS-AGE an Error94.
+Every PERSON that HAS-AGE an Error93 and that HAS-AGE an Error94 is a TEENAGER.
+
+Every ADULT is something that is not a CHILD and that is not a TEENAGER.
+
+No FEMALE is a MALE.
+
+Every SENIOR is something that is not an ADULT and that is not a CHILD and that is not a TEENAGER.
+
+No TEENAGER is a CHILD.
+
+No ADULT is a CHILD.
+
+No ADULT is a SENIOR.
+
+No ADULT is a TEENAGER.
+
+No CHILD is a SENIOR.
+
+No CHILD is a TEENAGER.
+
+No FEMALE is a MALE.
+
+No SENIOR is a TEENAGER.
+
+ALINA is something.
+
+ALINA is a FEMALE.
+
+ANA is something.
+
+ANA is a FEMALE.
+
+ARN-BASED is a VACCINETYPE.
+
+AZ is something.
+
+BLOOD-CLOT is a SIDEEFFECT.
+
+BOGDAN is something.
+
+BOGDAN is a MALE.
+
+CALARASI_COUNTY is a COUNTY.
+
+CARDIOVASCULAR is a DISEASE.
+
+CLUJ_COUNTY is a COUNTY.
+
+CONSTANTA_COUNTY is a COUNTY.
+
+COVASNA_COUNTY is a COUNTY.
+
+DENNIS is something.
+
+DENNIS is a MALE.
+
+DIABETES is a DISEASE.
+
+DOCTOR is a MEDICAL-JOB.
+
+DRAGOS is something.
+
+DRAGOS is a MALE.
+
+FATIGUE is a DISEASE.
+
+FEVER is a DISEASE.
+
+GREEN is a SCENARIO.
+
+HARGHITA_COUNTY is a COUNTY.
+
+HOUR-RESTRICTION is a RESTRICTION-TYPE.
+
+HUNEDOARA_COUNTY is a COUNTY.
+
+IALOMITA_COUNTY is a COUNTY.
+
+IASI_COUNTY is a COUNTY.
+
+ILFOV_COUNTY is a COUNTY.
+
+IOANA is something.
+
+IOANA is a FEMALE.
+
+JANITOR is an OTHER-JOB.
+
+LOCKDOWN is a RESTRICTION-TYPE.
+
+MARAMURES_COUNTY is a COUNTY.
+
+MARCUS is something.
+
+MARCUS is a MALE.
+
+MARIA is something.
+
+MARIA is a FEMALE.
+
+MEHEDINTI_COUNTY is a COUNTY.
+
+MILITARY is an ESSENTIAL-JOB.
+
+MURES_COUNTY is a COUNTY.
+
+MUSCULAR-PAIN is a DISEASE.
+
+NAUSEA is a DISEASE.
+
+NEAMT_COUNTY is a COUNTY.
+
+NO-RESTRICTION is a RESTRICTION-TYPE.
+
+NURSE is a MEDICAL-JOB.
+
+OBESITY is a DISEASE.
+
+OLT_COUNTY is a COUNTY.
+
+PFIZER is something.
+
+PHASE-1 is a VACCINATION-PHASE.
+
+PHASE-2 is a VACCINATION-PHASE.
+
+PHASE-3 is a VACCINATION-PHASE.
+
+PRAHOVA_COUNTY is a COUNTY.
+
+RARES is something.
+
+RARES is a MALE.
+
+RED is a SCENARIO.
+
+SALAJ_COUNTY is a COUNTY.
+
+SATU_MARE_COUNTY is a COUNTY.
+
+SIBIU_COUNTY is a COUNTY.
+
+STEFANA is something.
+
+STEFANA is a FEMALE.
+
+STUDENT is an OTHER-JOB.
+
+SUCEAVA_COUNTY is a COUNTY.
+
+TELEORMAN_COUNTY is a COUNTY.
+
+TULCEA_COUNTY is a COUNTY.
+
+VALCEA_COUNTY is a COUNTY.
+
+VASLUI_COUNTY is a COUNTY.
+
+VIRAL-VECTOR is a VACCINETYPE.
+
+VRANCEA_COUNTY is a COUNTY.
+
+WAITER is an OTHER-JOB.
+
+YELLOW is a SCENARIO.
+
+/* BUG: axiom too complex: SubClassOf(ObjectOneOf([AnonymousIndividual(_:genid1081180)]),Class(http://www.w3.org/2001/XMLSchema#simpleType)) */
+
+/* BUG: axiom too complex: SubClassOf(ObjectOneOf([AnonymousIndividual(_:genid1081181)]),Class(http://www.w3.org/2001/XMLSchema#maxInclusive)) */
+
+/* BUG: axiom too complex: SubClassOf(ObjectOneOf([AnonymousIndividual(_:genid1081186)]),Class(http://www.w3.org/2001/XMLSchema#simpleType)) */
+
+/* BUG: axiom too complex: SubClassOf(ObjectOneOf([AnonymousIndividual(_:genid1081187)]),Class(http://www.w3.org/2001/XMLSchema#minInclusive)) */
+
+/* BUG: axiom too complex: SubClassOf(ObjectOneOf([AnonymousIndividual(_:genid1081190)]),Class(http://www.w3.org/2001/XMLSchema#simpleType)) */
+
+/* BUG: axiom too complex: SubClassOf(ObjectOneOf([AnonymousIndividual(_:genid1081191)]),Class(http://www.w3.org/2001/XMLSchema#maxInclusive)) */
+
+/* BUG: axiom too complex: SubClassOf(ObjectOneOf([AnonymousIndividual(_:genid1081196)]),Class(http://www.w3.org/2001/XMLSchema#simpleType)) */
+
+/* BUG: axiom too complex: SubClassOf(ObjectOneOf([AnonymousIndividual(_:genid1081197)]),Class(http://www.w3.org/2001/XMLSchema#minInclusive)) */
+
+/* BUG: axiom too complex: SubClassOf(ObjectOneOf([AnonymousIndividual(_:genid1081200)]),Class(http://www.w3.org/2001/XMLSchema#simpleType)) */
+
+/* BUG: axiom too complex: SubClassOf(ObjectOneOf([AnonymousIndividual(_:genid1081201)]),Class(http://www.w3.org/2001/XMLSchema#maxInclusive)) */
+
+/* BUG: axiom too complex: SubClassOf(ObjectOneOf([AnonymousIndividual(_:genid1081206)]),Class(http://www.w3.org/2001/XMLSchema#simpleType)) */
+
+/* BUG: axiom too complex: SubClassOf(ObjectOneOf([AnonymousIndividual(_:genid1081207)]),Class(http://www.w3.org/2001/XMLSchema#minInclusive)) */
+
+ALINA HAS-JOB NURSE.
+
+ALINA VACCINATE-IN-PHASE PHASE-1.
+
+ALINA VACCINATE-WITH VIRAL-VECTOR.
+
+ANA HAS-JOB JANITOR.
+
+ANA VACCINATE-IN-PHASE PHASE-3.
+
+ANA VACCINATE-WITH ARN-BASED.
+
+AZ HAS-SIDE-EFFECT BLOOD-CLOT.
+
+AZ HAS-TYPE VIRAL-VECTOR.
+
+BOGDAN HAS-JOB STUDENT.
+
+BOGDAN VACCINATE-IN-PHASE PHASE-3.
+
+BOGDAN VACCINATE-WITH ARN-BASED.
+
+CALARASI_COUNTY HAS-RESTRICTION HOUR-RESTRICTION.
+
+CALARASI_COUNTY IN-SCENARIO YELLOW.
+
+CLUJ_COUNTY HAS-RESTRICTION LOCKDOWN.
+
+CLUJ_COUNTY IN-SCENARIO RED.
+
+CONSTANTA_COUNTY HAS-RESTRICTION HOUR-RESTRICTION.
+
+CONSTANTA_COUNTY IN-SCENARIO YELLOW.
+
+COVASNA_COUNTY HAS-RESTRICTION LOCKDOWN.
+
+COVASNA_COUNTY IN-SCENARIO RED.
+
+DENNIS HAS-JOB STUDENT.
+
+DENNIS VACCINATE-IN-PHASE PHASE-3.
+
+DENNIS VACCINATE-WITH ARN-BASED.
+
+DRAGOS HAS-JOB NURSE.
+
+DRAGOS VACCINATE-IN-PHASE PHASE-1.
+
+DRAGOS VACCINATE-WITH ARN-BASED.
+
+HARGHITA_COUNTY HAS-RESTRICTION LOCKDOWN.
+
+HARGHITA_COUNTY IN-SCENARIO RED.
+
+HUNEDOARA_COUNTY HAS-RESTRICTION LOCKDOWN.
+
+HUNEDOARA_COUNTY IN-SCENARIO RED.
+
+IALOMITA_COUNTY HAS-RESTRICTION NO-RESTRICTION.
+
+IALOMITA_COUNTY IN-SCENARIO GREEN.
+
+IASI_COUNTY HAS-RESTRICTION HOUR-RESTRICTION.
+
+IASI_COUNTY IN-SCENARIO YELLOW.
+
+ILFOV_COUNTY HAS-RESTRICTION LOCKDOWN.
+
+ILFOV_COUNTY IN-SCENARIO RED.
+
+IOANA HAS-JOB WAITER.
+
+IOANA VACCINATE-IN-PHASE PHASE-3.
+
+IOANA VACCINATE-WITH ARN-BASED.
+
+MARAMURES_COUNTY HAS-RESTRICTION NO-RESTRICTION.
+
+MARAMURES_COUNTY IN-SCENARIO GREEN.
+
+MARCUS HAS-JOB MILITARY.
+
+MARCUS VACCINATE-IN-PHASE PHASE-2.
+
+MARCUS VACCINATE-WITH VIRAL-VECTOR.
+
+MARIA HAS-JOB STUDENT.
+
+MARIA VACCINATE-IN-PHASE PHASE-3.
+
+MARIA VACCINATE-WITH ARN-BASED.
+
+MEHEDINTI_COUNTY HAS-RESTRICTION LOCKDOWN.
+
+MEHEDINTI_COUNTY IN-SCENARIO RED.
+
+MURES_COUNTY HAS-RESTRICTION LOCKDOWN.
+
+MURES_COUNTY IN-SCENARIO RED.
+
+NEAMT_COUNTY HAS-RESTRICTION HOUR-RESTRICTION.
+
+NEAMT_COUNTY IN-SCENARIO YELLOW.
+
+OLT_COUNTY HAS-RESTRICTION HOUR-RESTRICTION.
+
+OLT_COUNTY IN-SCENARIO YELLOW.
+
+PFIZER HAS-TYPE ARN-BASED.
+
+PHASE-1 HAS-NEXT PHASE-2.
+
+PHASE-2 HAS-NEXT PHASE-3.
+
+PRAHOVA_COUNTY HAS-RESTRICTION LOCKDOWN.
+
+PRAHOVA_COUNTY IN-SCENARIO RED.
+
+RARES HAS-JOB NURSE.
+
+RARES VACCINATE-IN-PHASE PHASE-1.
+
+RARES VACCINATE-WITH VIRAL-VECTOR.
+
+SALAJ_COUNTY HAS-RESTRICTION LOCKDOWN.
+
+SALAJ_COUNTY IN-SCENARIO RED.
+
+SATU_MARE_COUNTY HAS-RESTRICTION NO-RESTRICTION.
+
+SATU_MARE_COUNTY IN-SCENARIO GREEN.
+
+SIBIU_COUNTY HAS-RESTRICTION LOCKDOWN.
+
+SIBIU_COUNTY IN-SCENARIO RED.
+
+STEFANA HAS-JOB ENGINEER.
+
+STEFANA VACCINATE-WITH VIRAL-VECTOR.
+
+SUCEAVA_COUNTY HAS-RESTRICTION NO-RESTRICTION.
+
+SUCEAVA_COUNTY IN-SCENARIO GREEN.
+
+TELEORMAN_COUNTY HAS-RESTRICTION HOUR-RESTRICTION.
+
+TELEORMAN_COUNTY IN-SCENARIO YELLOW.
+
+TULCEA_COUNTY HAS-RESTRICTION HOUR-RESTRICTION.
+
+TULCEA_COUNTY IN-SCENARIO YELLOW.
+
+VALCEA_COUNTY HAS-RESTRICTION HOUR-RESTRICTION.
+
+VALCEA_COUNTY IN-SCENARIO YELLOW.
+
+VASLUI_COUNTY HAS-RESTRICTION NO-RESTRICTION.
+
+VASLUI_COUNTY IN-SCENARIO GREEN.
+
+VRANCEA_COUNTY HAS-RESTRICTION HOUR-RESTRICTION.
+
+VRANCEA_COUNTY IN-SCENARIO YELLOW.
+
+Everything that HAS-DISEASE something is a PERSON.
+
+Everything that HAS-JOB something is a PERSON.
+
+Everything that HAS-NEXT something is a VACCINATION-PHASE.
+
+Everything that HAS-RESTRICTION something is a COUNTY.
+
+Everything that HAS-SIDE-EFFECT something is a VACCINE.
+
+Everything that HAS-TYPE something is a VACCINE.
+
+Everything that IN-AGE-GROUP something is a PERSON.
+
+Everything that IN-SCENARIO something is a COUNTY.
+
+Everything that LIVES something is a PERSON.
+
+Everything that PART-OF something is a COUNTY.
+
+Everything that VACCINATE-IN-PHASE something is a PERSON.
+
+Everything that VACCINATE-WITH something is a PERSON.
+
+Everything that is HAS-DISEASE by something is a DISEASE.
+
+Everything that is HAS-JOB by something is a JOB.
+
+Everything that is HAS-NEXT by something is a VACCINATION-PHASE.
+
+Everything that is HAS-RESTRICTION by something is a RESTRICTION-TYPE.
+
+Everything that is HAS-SIDE-EFFECT by something is a SIDEEFFECT.
+
+Everything that is HAS-TYPE by something is a VACCINETYPE.
+
+Everything that is IN-AGE-GROUP by something is an AGE-GROUP.
+
+Everything that is IN-SCENARIO by something is a SCENARIO.
+
+Everything that is LIVES by something is a CITY.
+
+Everything that is PART-OF by something is a CITY.
+
+Everything that is VACCINATE-IN-PHASE by something is a VACCINATION-PHASE.
+
+Everything that is VACCINATE-WITH by something is a VACCINETYPE.
+

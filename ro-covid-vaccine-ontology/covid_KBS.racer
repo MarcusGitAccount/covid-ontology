@@ -3,7 +3,7 @@
 (in-knowledge-base covid-KBS)
 (in-tbox covid-KBS :init t)
 
-(signature :atomic-concepts (Person Male Female Gender Age-Group Child Teenager Adult Senior 
+(signature :atomic-concepts (Person Male Female Gender Child Teenager Adult Senior 
                               Disease 
                               Vaccination-Phase
                               Job 
@@ -17,7 +17,6 @@
               (has-disease :domain Person :range Disease)
               (has-job :domain Person :range Job)
               (vaccinate-in-phase :domain Person :range Vaccination-Phase)
-              (in-age-group :domain Person :range Age-Group)
               (vaccinate-with :domain Person :range VaccineType)
               (has-side-effect :domain Vaccine :range SideEffect)
               (has-type :domain Vaccine :range VaccineType)
@@ -60,18 +59,16 @@
 (instance  Mehedinti_County County)
 (instance  Teleorman_County County)
 
-;       Sparql query to get counties population
-
-
-;       PREFIX category: <http://dbpedia.org/resource/Category:>
-;       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-;       PREFIX page: <https://dbpedia.org/page/>
-;       
-;       select distinct(?county) ?population where {
-;         ?county dbo:type ?type.
-;         ?county  dbo:populationTotal ?population.
-;         FILTER(?type = dbr:Counties_of_Romania)
-;       }
+;Sparql query to get counties pop
+;      PREFIX category: <http://dbpedia.org/resource/Category:>
+;      PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+;      PREFIX page: <https://dbpedia.org/page/>
+;      
+;      select distinct(?county) ?population where {
+;        ?county dbo:type ?type.
+;        ?county  dbo:populationTotal ?population.
+;        FILTER(?type = dbr:Counties_of_Romania)
+;      }
 
 ; Attributes filled using the parser
 (attribute-filler Vaslui_County	395500 has-pop)
@@ -311,7 +308,7 @@
 ; SWRL RULES 
 ; Rule 1: People having nonesential jobs get the vaccine jab in Phase-3
 (define-rule (?x Phase-3 vaccinate-in-phase)
-  (and (?x ?z has-job) (?z Other-Job)))
+  (and (?x Person)))
 
 ;Rule 2: People having esential jobs and diseases get the vaccine in Phase-2
 (define-rule (?x Phase-2 vaccinate-in-phase)
@@ -390,6 +387,19 @@
 (concept-instances Male)
 (concept-instances Female)
 (concept-instances County)
-; QUESTION: De ce nu avem nicio instanță de Teenager când toate instanțele de persoane au 15 ani?
 (concept-instances Teenager)
-(all-role-assertions)
+
+;(all-role-assertions)
+;(tbox-coherent?)
+;(tbox-cyclic?)
+
+;(evaluate(length (all-atomic-concepts)))
+;(evaluate(length (all-roles)))
+;(evaluate(length (all-individuals)))
+;(evaluate(length (all-rules)))
+
+;(get-tbox-language)
+;(get-abox-language)
+
+(individuals-related? az viral-vector has-type)
+(individuals-related? Rares viral-vector vaccinate-with)
